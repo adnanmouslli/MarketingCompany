@@ -95,6 +95,8 @@ export default function About() {
       if (aboutUs.img) {
         setImagePreview(aboutUs.img);
       }
+
+      console.log(aboutUs);
     }
   }, [aboutData]);
 

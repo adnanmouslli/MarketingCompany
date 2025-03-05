@@ -1,37 +1,37 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Building2, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Printer } from 'lucide-react';
+import { MapPin, Phone, Mail, Building2, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Printer, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactInfo() {
   const contactDetails = [
     {
       icon: MapPin,
-      title: "Office Locations",
-      details: [
-        "90/3 Adawi Enshaat, Damascus, Syria",
-        "21/2051 Baladieh, Jaramana, Syria"
-      ]
+      title: "Visit Our Office",
+      details: ["123 Digital Hub, Smart Village", "Cairo, Egypt"],
+      color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: Phone,
-      title: "Phone and Fax Numbers",
+      title: "Let's Talk",
       details: [
-        {
-          label: "Phone:",
-          text: "+963 44 20 567"
-        },
-        {
-          label: "Fax:",
-          text: "+963 44 30 567"
-        }
-      ]
+        { label: "Phone", text: "+20 123 456 789" },
+        { label: "Support", text: "+20 123 456 790" }
+      ],
+      color: "from-blue-500 to-blue-600"
     },
     {
       icon: Mail,
-      title: "Email Address",
-      details: ["gd@ici-sy.com"]
+      title: "Email Us",
+      details: ["contact@atlants.com", "support@atlants.com"],
+      color: "from-indigo-500 to-indigo-600"
+    },
+    {
+      icon: Globe,
+      title: "Working Hours",
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 2:00 PM"],
+      color: "from-purple-500 to-purple-600"
     }
   ];
 

@@ -25,7 +25,7 @@ export default function AdminDashboard() {
       try {
         const data = await apiClient.post("/api/auth/login", {
           email: "anycode@gmail.com",
-          password: "anycode@admin2024",
+          password: "asdasd",
         });
 
         console.log("Auth response:", data);

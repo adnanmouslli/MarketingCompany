@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Search, Upload, Bell, Activity, BookOpen, ArrowRight, Link } from 'lucide-react';
 import ServiceHero from '@/components/services/ServiceHero';
+import { useParams } from 'next/navigation';
 
 export default function JobsIciPage() {
   const services = [
@@ -59,6 +60,9 @@ export default function JobsIciPage() {
     }
   };
 
+  const params = useParams();
+  const { name } = params;
+
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero 
@@ -78,7 +82,6 @@ export default function JobsIciPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
-
           >
             Overview
           </motion.span>

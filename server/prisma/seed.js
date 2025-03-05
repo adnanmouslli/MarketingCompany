@@ -248,11 +248,11 @@ async function main() {
           },
         ],
         aboutUs: {
-          title: "DISCOVER IC&I",
+          title: "DISCOVER Atlants",
           subtitle:
             "Your Reliable Partner in ICT Consulting, Solutions & Services",
           content: [
-            "A leading provider of ICT solutions, IC&I specializes in comprehensive consultancy, installation, commissioning, and outsourcing services. Our corporate business solutions span a range of sectors, including telecom, ISPs, banking, NGOs and more.",
+            "A leading provider of ICT solutions, Atlants specializes in comprehensive consultancy, installation, commissioning, and outsourcing services. Our corporate business solutions span a range of sectors, including telecom, ISPs, banking, NGOs and more.",
             "We handle all aspects of human resources services, especially contracting and outsourcing, designed to streamline your workforce management by providing flexible, efficient and scalable solutions.",
           ],
           features: [
@@ -384,10 +384,10 @@ async function main() {
 
   await prisma.about.create({
     data: {
-      title: "About IC&I",
+      title: "About Atlants",
       subtitle: "Empowering Progress Through Innovation",
       description: [
-        "IC&I is a leading provider of integrated solutions in Syria, specializing in ICT solutions and business process outsourcing. With over 15 years of experience, we've established ourselves as a trusted partner for organizations seeking innovative and reliable services.",
+        "Atlants is a leading provider of integrated solutions in Syria, specializing in ICT solutions and business process outsourcing. With over 15 years of experience, we've established ourselves as a trusted partner for organizations seeking innovative and reliable services.",
         "Our commitment to excellence and customer satisfaction has made us the preferred choice for businesses looking to optimize their operations and drive growth. We combine industry expertise with cutting-edge technology to deliver solutions that create lasting value for our clients.",
       ],
       mission:

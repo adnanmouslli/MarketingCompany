@@ -10,14 +10,14 @@ export const loginController = async (req, res) => {
     console.log(1);
 
     // For testing purposes - replace with database lookup in production
-    if (email === "anycode@gmail.com" && password === "anycode@admin2024") {
+    if (email === "anycode@gmail.com" && password === "asdasd") {
       console.log(2);
 
       const user = {
         userId: "1",
         email,
         role: "admin",
-        name: "AnyCode Admin",
+        name: "Atlants Admin",
       };
       console.log(33);
 
@@ -71,7 +71,7 @@ export const getCurrentUser = async (req, res) => {
       user: {
         id: req.user.userId,
         email: req.user.email,
-        name: "IC&I Admin",
+        name: "Atlants Admin",
         role: "admin",
       },
     });

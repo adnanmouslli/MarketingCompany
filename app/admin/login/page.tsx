@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Lock, Mail, AlertCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
-import logo from "../../../public/logo_ow.webp";
+import logo from "../../../public/logo.png";
 import { apiClient } from "@/lib/api";
 
 export default function LoginPage() {
