@@ -22,7 +22,7 @@ router.delete("/features/delete", deleteFeature);
 //services routes
 router.get("/services", getService);
 router.post("/services/create", createService);
-router.post("/services/update", updateService);
+router.put("/services", updateService);
 router.delete("/services/delete", deleteService);
 
 export default router;

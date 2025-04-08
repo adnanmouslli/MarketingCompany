@@ -1,4 +1,6 @@
 import prisma from "../prisma/client.js";
+import { ServicesDTO } from "../DTOs/servicesDTO.js";
+import { servicesRepository } from "../repositories/services-repo.js";
 
 export const updateServices = async (req, res) => {
   try {
@@ -34,13 +36,17 @@ export const updateServices = async (req, res) => {
   }
 };
 
-import { ServicesDTO } from "../DTOs/servicesDTO.js";
-import { servicesRepository } from "../repositories/services-repo.js";
-
 export const createServiceController = async (req, res) => {
   try {
+    // Log the request body for debugging
     console.log("req.body   :   ", req.body);
-    const service = await servicesRepository.createService(req.body);
+    
+    // Check if the request contains formData structure and extract if needed
+    const serviceData = req.body.formData || req.body;
+    
+    // Create the service using the repository
+    const service = await servicesRepository.createService(serviceData);
+    
     console.log("Service created:", service.title);
     res.status(201).json({ status: "success", service });
   } catch (error) {
@@ -55,10 +61,17 @@ export const createServiceController = async (req, res) => {
 export const updateServiceController = async (req, res) => {
   try {
     const { id } = req.params;
-    const serviceDTO = new ServicesDTO(req.body);
+    
+    // Check if the request contains formData structure and extract if needed
+    const serviceData = req.body.formData || req.body;
+    
+    // Create DTO and validate
+    const serviceDTO = new ServicesDTO(serviceData);
     serviceDTO.validate();
+    
     console.log("Updating service with data:", serviceDTO);
     const service = await servicesRepository.updateService(id, serviceDTO);
+    
     console.log("Service updated:", service.title);
     res.status(200).json({ status: "success", service });
   } catch (error) {

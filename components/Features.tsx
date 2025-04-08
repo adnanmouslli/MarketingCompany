@@ -64,7 +64,7 @@ export default function Features() {
       </div>
     );
   }
-
+  
   return (
     <section className="py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">

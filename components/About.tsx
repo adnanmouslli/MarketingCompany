@@ -31,7 +31,7 @@ const aboutContent = {
   ],
   stats: [
     { number: "200+", label: "Satisfied Clients" },
-    { number: "95%", label: "Client Retention" },
+    { number: "90%", label: "Client Retention" },
     { number: "150+", label: "Projects Completed" },
     { number: "2", label: "Specialized Teams" }
   ],

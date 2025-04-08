@@ -53,19 +53,19 @@ const Navbar = () => {
           items: [
             {
               name: "Web Development",
-              href: "/services/development/web",
+              href: "/services/development/web-development",
             },
             {
               name: "Mobile Apps",
-              href: "/services/development/mobile",
+              href: "/services/development/mobile-apps",
             },
             {
               name: "UI/UX Design",
-              href: "/services/development/design",
+              href: "/services/development/ui-ux-design",
             },
             {
               name: "Custom Solutions",
-              href: "/services/development/custom",
+              href: "/services/development/custom-solutions",
             },
           ],
         },

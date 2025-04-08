@@ -60,7 +60,7 @@ export default function ICTSolutionsPage() {
     <div className="min-h-screen bg-white">
       <ServiceHero 
         title="ICT Solutions"
-        description="IC&I brings over 20 years of experience in ICT consultation, installation, and commissioning services, delivering reliable solutions tailored to meet diverse business needs."
+        description="IC&I brings over 20 years of experience in ICT contact, installation, and commissioning services, delivering reliable solutions tailored to meet diverse business needs."
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
@@ -86,7 +86,7 @@ export default function ICTSolutionsPage() {
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
      {`       Our comprehensive ICT solutions are designed to help businesses optimize their operations, 
             enhance security, and stay competitive in today's technology-driven landscape. With over two 
-            decades of experience, we provide expert consultation, installation, and commissioning services 
+            decades of experience, we provide expert contact, installation, and commissioning services 
             tailored to meet your specific business needs.`}
           </p>
         </motion.div>
@@ -133,7 +133,7 @@ export default function ICTSolutionsPage() {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl transform rotate-1 scale-[1.02] opacity-50 group-hover:rotate-2 transition-transform duration-300"></div>
-                <Link href={service.link}>
+                <Link href={service.link} prefetch={true}>
                   <div className="relative rounded-2xl bg-white backdrop-blur-sm border border-gray-100 overflow-hidden transition-all duration-300 group-hover:bg-gray-50 shadow-sm">
                     <div className="p-8">
                       <div className={`p-4 rounded-xl bg-gradient-to-r ${service.gradient} transform group-hover:scale-110 transition-transform duration-300 mb-6 w-16 h-16 flex items-center justify-center`}>

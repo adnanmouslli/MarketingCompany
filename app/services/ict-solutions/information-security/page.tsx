@@ -29,7 +29,7 @@ export default function InformationSecurityPage() {
     },
     {
       icon: Search,
-      title: "Security Consultations",
+      title: "Security contacts",
       description:
         "Comprehensive security assessments and strategic consulting to identify vulnerabilities and implement robust defense mechanisms.",
       gradient: "from-[#4A9BE4] to-[#8590EA]",
