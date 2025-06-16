@@ -298,7 +298,7 @@ export default function BrandDevelopmentPage() {
         >
           <h2 className="text-3xl font-bold text-[#111240] mb-6">Ready to Build a Stronger Brand?</h2>
           <p className="text-[#111240]/70 max-w-2xl mx-auto mb-8">
-            Let's discuss how our brand development services can help you create a distinctive identity that resonates with your audience and drives business growth.
+            Let&apos;s discuss how our brand development services can help you create a distinctive identity that resonates with your audience and drives business growth.
           </p>
           <Link 
             href="/contact" 

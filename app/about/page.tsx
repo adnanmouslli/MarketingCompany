@@ -301,7 +301,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-gray-600 mb-8"
             >
-              We're here to help you achieve your goals through our integrated marketing and programming solutions
+              We are here to help you achieve your goals through our integrated marketing and programming solutions
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 20 }}

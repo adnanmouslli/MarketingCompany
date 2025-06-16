@@ -31,7 +31,7 @@ export default function ContactHero (){
           </motion.div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
-            Let's Create Digital Excellence Together
+            Let&apos;s Create Digital Excellence Together
           </h1>
           
           <p className="text-lg text-slate-300/80 leading-relaxed">

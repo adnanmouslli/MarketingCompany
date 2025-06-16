@@ -43,7 +43,7 @@ export default function CTA() {
           </h2>
           
           <p className="text-xl mb-12 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Partner with Atlants Marketing and AnyCode to create powerful digital experiences that drive growth and success in today's competitive landscape.
+            Partner with Atlants Marketing and AnyCode to create powerful digital experiences that drive growth and success in today&apos;s competitive landscape.
           </p>
 
           {/* Services Preview */}

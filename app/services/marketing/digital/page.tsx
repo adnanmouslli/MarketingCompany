@@ -316,7 +316,7 @@ export default function DigitalMarketingPage() {
               <h3 className="text-3xl font-bold text-white mb-2">3.8x</h3>
               <p className="text-lg font-medium text-white/80 mb-2">ROI on Ad Spend</p>
               <p className="text-white/70">
-                Average return on investment for our clients' digital advertising campaigns.
+                Average return on investment for our clients&apos; digital advertising campaigns.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">

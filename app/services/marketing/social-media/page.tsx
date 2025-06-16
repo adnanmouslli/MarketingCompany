@@ -201,7 +201,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We provide expert management across all major social media platforms, tailoring our approach to each platform's unique features and audience.
+              We provide expert management across all major social media platforms, tailoring our approach to each platform&apos;s unique features and audience.
             </motion.p>
           </div>
 
@@ -350,7 +350,7 @@ export default function SocialMediaPage() {
               </div>
               <h3 className="text-lg font-semibold text-[#111240] mb-4">Content Creation</h3>
               <p className="text-sm text-[#111240]/60">
-                Producing engaging multimedia content tailored to each platform's requirements and audience.
+                Producing engaging multimedia content tailored to each platform&apos;s requirements and audience.
               </p>
             </motion.div>
 

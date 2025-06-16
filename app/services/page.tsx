@@ -3,13 +3,15 @@
 import axios from "axios";
 import { motion } from "framer-motion";
 import {
-  Server,
-  Network,
-  Shield,
-  Code,
+  ShoppingCart,
+  Palette,
+  PenTool,
   Users,
-  UserPlus,
-  ClipboardList,
+  BarChart2,
+  Camera,
+  Globe,
+  LineChart,
+  MessageSquare,
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
@@ -17,71 +19,107 @@ import { useEffect } from "react";
 
 export default function ServicesPage() {
   const services = {
-    ict: {
-      title: "ICT Solutions",
+    marketing: {
+      title: "Marketing Solutions",
       description:
-        "Our ICT solutions focus on optimizing business operations and driving process efficiency.",
+        "Strategic marketing services designed to elevate your brand presence and drive business growth.",
       items: [
         {
-          icon: Server,
-          title: "Data Center Infrastructure",
+          icon: ShoppingCart,
+          title: "Digital Marketing",
           description:
-            "Advanced data center solutions optimized for your growing business needs.",
-          gradient: "from-[#3785CC] to-[#4A9BE4]",
-          link: "/services/ict-solutions/data-center",
+            "Data-driven digital marketing strategies that drive traffic, generate leads, and increase conversions.",
+          gradient: "from-[#3B82F6] to-[#60A5FA]",
+          link: "/services/marketing/digital",
         },
         {
-          icon: Network,
-          title: "Solutions Integration",
+          icon: PenTool,
+          title: "Content Strategy",
           description:
-            "Strategic technology solutions to enhance operations and drive business growth.",
-          gradient: "from-[#4A9BE4] to-[#5B8AF0]",
-          link: "/services/ict-solutions/solutions-integration",
+            "Strategic content planning and creation that engages your audience and builds authority.",
+          gradient: "from-[#14B8A6] to-[#2DD4BF]",
+          link: "/services/marketing/content",
         },
         {
-          icon: Shield,
-          title: "Information Security",
+          icon: Palette,
+          title: "Brand Development",
           description:
-            "Advanced security solutions engineered to safeguard your critical business information assets.",
-          gradient: "from-[#5B8AF0] to-[#8590EA]",
-          link: "/services/ict-solutions/information-security",
-        },
-        {
-          icon: Code,
-          title: "Software Development",
-          description:
-            "Custom web and mobile application development solutions for complete digital transformation.",
-          gradient: "from-[#8590EA] to-[#B5C6F4]",
-          link: "/services/ict-solutions/software-development",
-        },
-      ],
-    },
-    business: {
-      title: "Business Outsourcing",
-      description:
-        "Comprehensive HR and recruitment solutions to streamline your operations.",
-      items: [
-        {
-          icon: UserPlus,
-          title: "Jobs.ici – Recruiting",
-          description: "Connect with top talents across various industries.",
-          gradient: "from-[#3785CC] to-[#5B8AF0]",
-          link: "/services/business-outsourcing/jobs-ici",
+            "Building distinctive, memorable brand identities that connect with your audience.",
+          gradient: "from-[#9333EA] to-[#A855F7]",
+          link: "/services/marketing/branding",
         },
         {
           icon: Users,
-          title: "HR & Recruitment",
+          title: "Social Media Management",
           description:
-            "Professional HR solutions and talent acquisition for your business growth.",
-          gradient: "from-[#4A9BE4] to-[#B5C6F4]",
-          link: "/services/business-outsourcing/hr-recruitment",
+            "Strategic social media solutions to build your brand presence and engage your audience.",
+          gradient: "from-[#EC4899] to-[#F472B6]",
+          link: "/services/marketing/social-media",
+        },
+      ],
+    },
+    development: {
+      title: "Development Services",
+      description:
+        "Cutting-edge development solutions that power digital transformation for your business.",
+      items: [
+        {
+          icon: Globe,
+          title: "Web Development",
+          description: "Custom websites and applications that create powerful, scalable experiences.",
+          gradient: "from-[#3785CC] to-[#4A9BE4]",
+          link: "/services/development/web-development",
         },
         {
-          icon: ClipboardList,
-          title: "HR Payroll & Performance",
-          description: "Streamlined payroll and performance management.",
-          gradient: "from-[#5B8AF0] to-[#B5C6F4]",
-          link: "/services/business-outsourcing/hr-payroll",
+          icon: Camera,
+          title: "Mobile Apps",
+          description:
+            "Native and cross-platform mobile applications that connect you with users on any device.",
+          gradient: "from-[#6366F1] to-[#8B5CF6]",
+          link: "/services/development/mobile-apps",
+        },
+        {
+          icon: LineChart,
+          title: "UI/UX Design",
+          description: "User-centered design services that create intuitive, engaging digital experiences.",
+          gradient: "from-[#F59E0B] to-[#F97316]",
+          link: "/services/development/ui-ux-design",
+        },
+        {
+          icon: MessageSquare,
+          title: "Custom Solutions",
+          description: "Tailored software development to solve your unique business challenges.",
+          gradient: "from-[#10B981] to-[#059669]",
+          link: "/services/development/custom-solutions",
+        },
+      ],
+    },
+    additional: {
+      title: "Specialized Solutions",
+      description:
+        "Advanced tools and services to enhance your digital marketing and development efforts.",
+      items: [
+        {
+          icon: BarChart2,
+          title: "Marketing Analytics",
+          description: "Comprehensive tracking and analysis to optimize your marketing campaigns.",
+          gradient: "from-[#4A9BE4] to-[#8590EA]",
+          link: "/services/specialized/analytics",
+        },
+        {
+          icon: ShoppingCart,
+          title: "E-commerce Solutions",
+          description:
+            "Custom online store development and optimization for maximum conversions.",
+          gradient: "from-[#FF6B6B] to-[#FF8E53]",
+          link: "/services/specialized/ecommerce",
+        },
+        {
+          icon: Camera,
+          title: "Content Creation",
+          description: "Professional photography, video, and creative assets for your brand.",
+          gradient: "from-[#FF8E53] to-[#FFBD80]",
+          link: "/services/specialized/content-creation",
         },
       ],
     },
@@ -113,7 +151,7 @@ export default function ServicesPage() {
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full bg-[url('/noise.png')] opacity-20"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#181c52] via-[#181c52] to-[#3785CC] animate-gradient"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#111240] via-[#1E1C52] to-[#EC4899] animate-gradient"></div>
         </div>
 
         <div className="relative w-full lg:w-[1280px]  mx-auto px-4 py-32">
@@ -131,12 +169,11 @@ export default function ServicesPage() {
             >
               What We Offer
             </motion.span>
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-[#3785CC] via-[#4A9BE4] to-[#5B8AF0] bg-clip-text text-transparent mb-6">
-              Comprehensive Business Solutions
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-[#FF6B6B] via-[#FF8E53] to-[#FFBD80] bg-clip-text text-transparent mb-6">
+              Strategic Marketing & Development
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Empowering your business with cutting-edge technology and expert
-              talent management solutions
+              Empowering your business with innovative marketing strategies and cutting-edge development solutions
             </p>
           </motion.div>
         </div>
