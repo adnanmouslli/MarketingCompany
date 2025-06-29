@@ -1,0 +1,68 @@
+{
+  "about": {
+    "aboutUs": "About Us",
+    "title": "Atlants",
+    "subtitle": "Integrated partnership between marketing and programming for your business success",
+    "description": [
+      "Atlants was founded in 2018 as a strategic partnership between digital marketing experts and software developers to provide integrated solutions for companies and institutions. We combine the power of professional marketing and innovative technical development to help our clients grow in the digital world.",
+      "We have a team of professional marketers and programmers who work together harmoniously to achieve our clients' goals. Over the past years, we have built a strong reputation for providing exceptional services and achieving tangible results. Our commitment to excellence is reflected in the trust and loyalty we have earned from a wide range of clients.",
+      "With our presence in all major cities and main offices in Damascus, Aleppo, Homs, and Latakia, we are strategically positioned to provide first-class services wherever they are needed."
+    ],
+    "img": "/background.png",
+    "mission": "To provide integrated marketing and technical solutions that enable companies to achieve their maximum potential in the digital world by combining strategic marketing and innovative technical development.",
+    "vision": "To become the preferred strategic partner for companies looking to achieve sustainable growth in the digital age, by transforming challenges into opportunities using the latest marketing and programming technologies.",
+    "values": [
+      {
+        "id": 1,
+        "icon": "Globe",
+        "title": "Global Approach",
+        "text": "We adopt global best practices in marketing and programming"
+      },
+      {
+        "id": 2,
+        "icon": "Target",
+        "title": "Results-Focused",
+        "text": "We measure our success through the results we achieve for our clients"
+      },
+      {
+        "id": 3,
+        "icon": "Compass",
+        "title": "Clear Vision",
+        "text": "We drive innovation and deliver exceptional performance in every project"
+      },
+      {
+        "id": 4,
+        "icon": "Shield",
+        "title": "Strong Ethics",
+        "text": "We adhere to the highest standards of integrity and professionalism in all our dealings"
+      },
+      {
+        "id": 5,
+        "icon": "Code",
+        "title": "Technical Excellence",
+        "text": "We develop innovative programming solutions that meet changing market needs"
+      },
+      {
+        "id": 6,
+        "icon": "Megaphone",
+        "title": "Marketing Creativity",
+        "text": "We design innovative marketing strategies that deliver exceptional results"
+      }
+    ],
+    "stats": [
+      { "id": 1, "number": "7+", "label": "Years Experience" },
+      { "id": 2, "number": "150+", "label": "Completed Projects" },
+      { "id": 3, "number": "35+", "label": "Team Experts" },
+      { "id": 4, "number": "96%", "label": "Client Satisfaction" }
+    ],
+    "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "ourVision": "Our Vision",
+    "ourValues": "Our Values",
+    "whatDrivesUs": "What Drives Us",
+    "coreValuesText": "Our core values shape everything we do and guide us in delivering excellence",
+    "readyBusiness": "Ready to Take Your Business to the Next Level?",
+    "helpAchieveGoals": "We are here to help you achieve your goals through our integrated marketing and programming solutions",
+    "contactUs": "Contact Us"
+  }
+}

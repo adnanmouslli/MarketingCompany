@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,18 +30,9 @@ const Navbar = () => {
           title: "Marketing Solutions",
           href: "/services/marketing",
           items: [
-            {
-              name: "Digital Marketing",
-              href: "/services/marketing/digital",
-            },
-            {
-              name: "Content Strategy",
-              href: "/services/marketing/content",
-            },
-            {
-              name: "Brand Development",
-              href: "/services/marketing/branding",
-            },
+            { name: "Digital Marketing", href: "/services/marketing/digital" },
+            { name: "Content Strategy", href: "/services/marketing/content" },
+            { name: "Brand Development", href: "/services/marketing/branding" },
             {
               name: "Social Media Management",
               href: "/services/marketing/social-media",
@@ -55,10 +47,7 @@ const Navbar = () => {
               name: "Web Development",
               href: "/services/development/web-development",
             },
-            {
-              name: "Mobile Apps",
-              href: "/services/development/mobile-apps",
-            },
+            { name: "Mobile Apps", href: "/services/development/mobile-apps" },
             {
               name: "UI/UX Design",
               href: "/services/development/ui-ux-design",
@@ -77,6 +66,12 @@ const Navbar = () => {
 
   if (pathname.startsWith("/admin")) return null;
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("i18nextLng", lng);
+    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -92,7 +87,6 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-24">
           <Link href="/" className="flex items-center group">
             <div className="relative overflow-hidden rounded-xl p-2">
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-600/10 group-hover:from-emerald-500/20 group-hover:to-blue-600/20 transition-all duration-300" /> */}
               <Image
                 src="/logo_2.png"
                 alt="Atlants Logo"
@@ -165,6 +159,16 @@ const Navbar = () => {
               <span>Blog</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
+
+            {/* زر تغيير اللغة */}
+            <button
+              onClick={() =>
+                changeLanguage(i18n.language === "en" ? "ar" : "en")
+              }
+              className="text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
+            >
+              {i18n.language === "en" ? "عربي" : "English"}
+            </button>
 
             <Link
               href="/contact"
@@ -241,6 +245,17 @@ const Navbar = () => {
                 >
                   Blog
                 </Link>
+
+                {/* زر تغيير اللغة - موبايل */}
+                <button
+                  onClick={() => {
+                    changeLanguage(i18n.language === "en" ? "ar" : "en");
+                    setIsOpen(false);
+                  }}
+                  className="w-full text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
+                >
+                  {i18n.language === "en" ? "عربي" : "English"}
+                </button>
 
                 <Link
                   href="/contact"
