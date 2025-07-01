@@ -13,6 +13,19 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, i18n } = useTranslation();
 
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  // إغلاق القائمة لما المستخدم يضغط خارجها
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest(".lang-dropdown")) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -175,18 +188,45 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
 
-            <button
-              onClick={() => {
-                const newLang = i18n.language === "en" ? "ar" : "en";
-                i18n.changeLanguage(newLang);
-                localStorage.setItem("i18nextLng", newLang);
-              }}
-              className="text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
-            >
-              {i18n.language === "en"
-                ? t("navbar.arabic")
-                : t("navbar.english")}
-            </button>
+            {/* Language Dropdown Desktop */}
+            <div className="relative lang-dropdown">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition flex items-center gap-2"
+              >
+                {i18n.language === "en" ? "English" : "العربية"}
+                <ChevronDown
+                  className={`w-4 h-4 text-emerald-300 transition-transform duration-300 ${
+                    isLangOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute mt-2 right-0 w-36 rounded-md shadow-lg bg-white ring-1 ring-black/5 z-50">
+                  <button
+                    onClick={() => {
+                      i18n.changeLanguage("en");
+                      localStorage.setItem("i18nextLng", "en");
+                      setIsLangOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-emerald-100"
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => {
+                      i18n.changeLanguage("ar");
+                      localStorage.setItem("i18nextLng", "ar");
+                      setIsLangOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-emerald-100"
+                  >
+                    العربية
+                  </button>
+                </div>
+              )}
+            </div>
 
             <Link
               href="/contact"
@@ -264,19 +304,41 @@ const Navbar = () => {
                   {t("navbar.blog")}
                 </Link>
 
-                <button
-                  onClick={() => {
-                    const newLang = i18n.language === "en" ? "ar" : "en";
-                    i18n.changeLanguage(newLang);
-                    localStorage.setItem("i18nextLng", newLang);
-                    setIsOpen(false);
-                  }}
-                  className="w-full text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
-                >
-                  {i18n.language === "en"
-                    ? t("navbar.arabic")
-                    : t("navbar.english")}
-                </button>
+                {/* Language Dropdown */}
+                <div className="relative lang-dropdown">
+                  <button
+                    onClick={() => setIsLangOpen(!isLangOpen)}
+                    className="text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition flex items-center gap-2"
+                  >
+                    {i18n.language === "en" ? "English" : "العربية"}
+                    <ChevronDown className="w-4 h-4 text-emerald-300" />
+                  </button>
+
+                  {isLangOpen && (
+                    <div className="absolute mt-2 right-0 w-32 rounded-md shadow-lg bg-white ring-1 ring-black/5 z-20">
+                      <button
+                        onClick={() => {
+                          i18n.changeLanguage("en");
+                          localStorage.setItem("i18nextLng", "en");
+                          setIsLangOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-emerald-100"
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => {
+                          i18n.changeLanguage("ar");
+                          localStorage.setItem("i18nextLng", "ar");
+                          setIsLangOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-emerald-100"
+                      >
+                        العربية
+                      </button>
+                    </div>
+                  )}
+                </div>
 
                 <Link
                   href="/contact"
