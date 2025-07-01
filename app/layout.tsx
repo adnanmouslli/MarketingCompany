@@ -1,7 +1,7 @@
-"use client"; // مهم جداً عشان i18next يتفاعل مع المتصفح
+"use client";
 
 import React from "react";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/components/providers/QueryProvider";
 import Navbar from "@/components/Navbar";
@@ -9,9 +9,12 @@ import Footer from "@/components/Footer";
 import { LoadingProvider } from "@/components/providers/LoadingProvider";
 import LayoutExtra from "@/components/providers/LayoutExtra";
 
-import "../i18n"; // استدعاء ملف إعداد i18n هنا
+import "../i18n";
 
-const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "600", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -19,18 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   React.useEffect(() => {
-    // تحديث اتجاه الصفحة عند تغيير اللغة من i18n
     const handleLanguageChange = (lng: string) => {
       document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
     };
 
-    // اشتراك في حدث تغيير اللغة
     import("i18next").then(({ default: i18n }) => {
       handleLanguageChange(i18n.language);
       i18n.on("languageChanged", handleLanguageChange);
     });
 
-    // تنظيف الاشتراك
     return () => {
       import("i18next").then(({ default: i18n }) => {
         i18n.off("languageChanged", handleLanguageChange);
@@ -39,7 +39,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={cairo.className}>
       <body>
         <QueryProvider>
           <LoadingProvider>
