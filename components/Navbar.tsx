@@ -123,7 +123,7 @@ const Navbar = () => {
           <div
             className={`hidden md:flex items-center ${
               i18n.language === "ar"
-                ? "flex-row-reverse gap-x-8" // لما عربي: عكس الصف مع مسافة صحيحة بين العناصر
+                ? "flex-row gap-x-8" // بالعربي: ترتيب طبيعي من اليمين لليسار مع مسافات صحيحة
                 : "flex-row gap-x-8" // لما إنجليزي: ترتيب طبيعي مع مسافة
             }`}
           >
