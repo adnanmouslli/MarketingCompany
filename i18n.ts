@@ -22,7 +22,12 @@ i18n
       caches: ["localStorage"],
     },
   });
-
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("i18nextLng", lng);
+    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
+  };
+  
 // ضبط اتجاه الصفحة تلقائياً عند تحميل الصفحة (في المتصفح فقط)
 if (typeof window !== "undefined") {
   const currentLang = localStorage.getItem("i18nextLng") || "en";

@@ -13,15 +13,15 @@ import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { LoadableContext } from "next/dist/shared/lib/loadable-context.shared-runtime";
 import { useContext, useEffect } from "react";
 import { LoadingContext } from "@/components/providers/LoadingProvider";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 const fetchingServices = async () => {
   const response = await apiClient.get("/admin/services/");
-  console.log("API Response:", response.data.response); // Check structure
-  return response.data.response; // This should be an array
+  console.log("API Response:", response.data.response);
+  return response.data.response;
 };
 
 const icons = [<RefreshCcwDot key={123456789} />, <Shield key={987654321} />];
@@ -33,36 +33,11 @@ export default function BusinessOutsourcingPage() {
     queryFn: fetchingServices,
   });
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     setIsLoading(isFetching || isLoading);
   }, [isFetching, isLoading]);
-
-  // const services = [
-  //   {
-  //     icon: UserPlus,
-  //     title: "Jobs.ici – Recruiting",
-  //     description:
-  //       "Empowering professionals in Syria to discover their ideal career opportunities. Explore a broad selection of job listings, upload your resume, and receive tailored job alerts.",
-  //     link: "/services/business-outsourcing/jobs-ici",
-  //     gradient: "from-[#3785CC] to-[#4A9BE4]",
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: "HR & Recruitment Management",
-  //     description:
-  //       "Strategic talent acquisition and assessment, ensuring candidates are matched to positions that drive business success.",
-  //     link: "/services/business-outsourcing/hr-recruitment",
-  //     gradient: "from-[#4A9BE4] to-[#8590EA]",
-  //   },
-  //   {
-  //     icon: ClipboardList,
-  //     title: "HR Payroll & Performance Management",
-  //     description:
-  //       "Overseeing the payroll system for all personnel, ensuring thorough review of supporting documents and accurate calculations.",
-  //     link: "/services/business-outsourcing/hr-payroll",
-  //     gradient: "from-[#8590EA] to-[#B5C6F4]",
-  //   },
-  // ];
 
   interface servicesTypes {
     id: number;
@@ -73,6 +48,7 @@ export default function BusinessOutsourcingPage() {
     overviewcontent: string;
     categoryId: number;
   }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -95,9 +71,8 @@ export default function BusinessOutsourcingPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="Business Outsourcing"
-        description="IC&I HR outsourcing services is one of our core strengths. Our scalable services are
-        crafted to deliver optimal efficiency and support your business's evolving needs."
+        title={t("businessOutsourcing.hero.title")}
+        description={t("businessOutsourcing.hero.description")}
       />
 
       <div className="w-full lg:w-[1280px]  mx-auto px-4 py-24">
@@ -113,19 +88,15 @@ export default function BusinessOutsourcingPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("businessOutsourcing.overview.label")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent mb-8">
-            Market Leading HR Solutions
+            {t("businessOutsourcing.overview.heading")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {` We are the Syrian market leader with the largest market share in
-            providing full recruitment services in UN agencies, NPO's and NGO's.
-            Our comprehensive HR outsourcing solutions are designed to
-            streamline your operations and drive organizational success through
-            effective talent management.`}
+            {t("businessOutsourcing.overview.text")}
           </p>
         </motion.div>
 
@@ -143,21 +114,19 @@ export default function BusinessOutsourcingPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("businessOutsourcing.whatWeOffer.label")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#4A9BE4] to-[#8590EA] bg-clip-text text-transparent"
             >
-              Business Outsourcing Solutions
+              {t("businessOutsourcing.whatWeOffer.heading")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              Explore our range of specialized HR and recruitment solutions
-              designed to optimize your workforce management and drive business
-              growth.
+              {t("businessOutsourcing.whatWeOffer.text")}
             </motion.p>
           </div>
 
@@ -186,13 +155,6 @@ export default function BusinessOutsourcingPage() {
                     <p className="text-[#111240]/60 mb-6">
                       {service.description}
                     </p>
-                    {/* <Link
-                    href={service.link}
-                    className="inline-flex items-center text-[#111240]/80 hover:text-[#111240] group/link"
-                  >
-                    <span className="mr-2">Learn More</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </Link> */}
                   </div>
                 </motion.div>
               ))}

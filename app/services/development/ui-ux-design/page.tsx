@@ -1,46 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, PenTool, Eye, Users, LineChart, ArrowRight } from "lucide-react";
+import {
+  Layers,
+  PenTool,
+  Eye,
+  Users,
+  LineChart,
+  ArrowRight,
+} from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 export default function UIUXDesignPage() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Users,
-      title: "User Research",
-      description:
-        "In-depth research to understand your users' needs, behaviors, and pain points, guiding design decisions that truly resonate with your audience.",
+      title: t(
+        "sections.uiUxDesign.servicesSection.services.userResearch.title"
+      ),
+      description: t(
+        "sections.uiUxDesign.servicesSection.services.userResearch.description"
+      ),
       gradient: "from-[#F59E0B] to-[#F97316]",
     },
     {
       icon: PenTool,
-      title: "UI Design",
-      description:
-        "Visually stunning interfaces that reflect your brand identity while creating intuitive, accessible, and engaging experiences for your users.",
+      title: t("sections.uiUxDesign.servicesSection.services.uiDesign.title"),
+      description: t(
+        "sections.uiUxDesign.servicesSection.services.uiDesign.description"
+      ),
       gradient: "from-[#F97316] to-[#FB7185]",
     },
     {
       icon: Eye,
-      title: "UX Design",
-      description:
-        "User experience strategies and solutions that enhance usability, accessibility, and satisfaction, creating products that users love to interact with.",
+      title: t("sections.uiUxDesign.servicesSection.services.uxDesign.title"),
+      description: t(
+        "sections.uiUxDesign.servicesSection.services.uxDesign.description"
+      ),
       gradient: "from-[#FB7185] to-[#F43F5E]",
     },
     {
       icon: Layers,
-      title: "Prototyping",
-      description:
-        "Interactive prototypes that simulate the user experience, allowing for testing and refinement before development begins.",
+      title: t(
+        "sections.uiUxDesign.servicesSection.services.prototyping.title"
+      ),
+      description: t(
+        "sections.uiUxDesign.servicesSection.services.prototyping.description"
+      ),
       gradient: "from-[#F59E0B] to-[#F97316]",
     },
     {
       icon: LineChart,
-      title: "Usability Testing",
-      description:
-        "Comprehensive testing with real users to identify issues, gather feedback, and validate design decisions to ensure optimal user experience.",
+      title: t(
+        "sections.uiUxDesign.servicesSection.services.usabilityTesting.title"
+      ),
+      description: t(
+        "sections.uiUxDesign.servicesSection.services.usabilityTesting.description"
+      ),
       gradient: "from-[#F97316] to-[#FB7185]",
     },
   ];
@@ -67,8 +87,8 @@ export default function UIUXDesignPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="UI/UX Design"
-        description="Creating intuitive, engaging, and user-centered digital experiences that delight your audience."
+        title={t("sections.uiUxDesign.title")}
+        description={t("sections.uiUxDesign.description")}
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
@@ -84,19 +104,18 @@ export default function UIUXDesignPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("sections.uiUxDesign.overview.label")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#F59E0B] to-[#F97316] bg-clip-text text-transparent mb-8">
-            User-Centered Design Excellence
+            {t("sections.uiUxDesign.overview.heading")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {`Our UI/UX design team combines artistic creativity with strategic thinking to create digital experiences that not only look stunning but also deliver exceptional usability and accessibility. We put users at the center of every design decision, ensuring that your website, application, or digital product provides seamless interactions that keep users engaged and satisfied. From initial user research and wireframing to high-fidelity prototypes and design systems, we deliver comprehensive design solutions that align with your brand identity and business objectives.`}
+            {t("sections.uiUxDesign.overview.paragraph")}
           </p>
         </motion.div>
         <div className="w-full h-[2px] bg-gradient-to-r from-[#F59E0B] to-[#F97316] my-12 opacity-50" />
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -109,19 +128,19 @@ export default function UIUXDesignPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("sections.uiUxDesign.servicesSection.label")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#F97316] to-[#FB7185] bg-clip-text text-transparent"
             >
-              UI/UX Design Services
+              {t("sections.uiUxDesign.servicesSection.heading")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              {`Our comprehensive UI/UX design services focus on creating intuitive, accessible, and engaging user experiences that drive adoption and satisfaction.`}
+              {t("sections.uiUxDesign.servicesSection.paragraph")}
             </motion.p>
           </div>
 
@@ -152,8 +171,7 @@ export default function UIUXDesignPage() {
           </motion.div>
         </motion.div>
 
-        {/* Design Process */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -168,7 +186,7 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Our Process
+              {t("uiUxDesign.process.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -177,7 +195,7 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#F59E0B] to-[#F97316] bg-clip-text text-transparent"
             >
-              Design Thinking Methodology
+              {t("uiUxDesign.process.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -186,94 +204,44 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We follow a proven design thinking approach to create user experiences that truly meet the needs of your audience.
+              {t("uiUxDesign.process.paragraph")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#F59E0B]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#F59E0B]">1</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Empathize</h3>
-              <p className="text-sm text-[#111240]/60">
-                Understanding your users through research, interviews, and observation to identify their needs and pain points.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#F97316]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#F97316]">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Define</h3>
-              <p className="text-sm text-[#111240]/60">
-                Defining the core problems and user needs that will guide our design decisions and solutions.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#FB7185]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#FB7185]">3</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Ideate</h3>
-              <p className="text-sm text-[#111240]/60">
-                Generating a wide range of creative ideas and solutions to address the identified user needs.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#F43F5E]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#F43F5E]">4</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Prototype</h3>
-              <p className="text-sm text-[#111240]/60">
-                Creating interactive prototypes to visualize and test our design solutions before implementation.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#F59E0B]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#F59E0B]">5</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Test</h3>
-              <p className="text-sm text-[#111240]/60">
-                Testing our designs with real users to gather feedback and iterate until we achieve the optimal solution.
-              </p>
-            </motion.div>
+            {t("uiUxDesign.process.steps", { returnObjects: true }).map(
+              (step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+                >
+                  <div
+                    className={`w-12 h-12 rounded-full flex items-center justify-center mb-6`}
+                    style={{ backgroundColor: step.color + "1A" }}
+                  >
+                    <span
+                      className="text-2xl font-bold"
+                      style={{ color: step.color }}
+                    >
+                      {index + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#111240] mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-[#111240]/60">
+                    {step.description}
+                  </p>
+                </motion.div>
+              )
+            )}
           </div>
-        </motion.div>
+        </motion.div> */}
 
-        {/* Tools */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +257,7 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Our Toolkit
+              {t("sections.uiUxDesign.tools.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -298,7 +266,7 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#F59E0B] to-[#F97316] bg-clip-text text-transparent"
             >
-              Design Tools We Use
+              {t("sections.uiUxDesign.tools.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -307,29 +275,16 @@ export default function UIUXDesignPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We utilize industry-leading tools and technologies to deliver exceptional design solutions.
+              {t("sections.uiUxDesign.tools.paragraph")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              "Figma",
-              "Adobe XD",
-              "Sketch",
-              "InVision",
-              "Protopie",
-              "Zeplin",
-              "Illustrator",
-              "Photoshop",
-              "Principle",
-              "Framer",
-              "Maze",
-              "Hotjar",
-              "Miro",
-              "UserTesting",
-              "Axure RP",
-              "Abstract",
-            ].map((tool, index) => (
+            {(
+              t("sections.uiUxDesign.tools.list", {
+                returnObjects: true,
+              }) as string[]
+            ).map((tool, index) => (
               <motion.div
                 key={tool}
                 initial={{ opacity: 0, y: 20 }}
@@ -344,7 +299,6 @@ export default function UIUXDesignPage() {
           </div>
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -352,16 +306,18 @@ export default function UIUXDesignPage() {
           viewport={{ once: true }}
           className="mt-32 bg-gradient-to-r from-[#111240] to-[#1a1f4b] rounded-2xl p-10 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Elevate Your User Experience?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            {t("sections.uiUxDesign.cta.heading")}
+          </h2>
           <p className="text-white/70 max-w-2xl mx-auto mb-8">
-            Let our UI/UX design team help you create intuitive, engaging digital experiences that your users will love.
+            {t("sections.uiUxDesign.cta.paragraph")}
           </p>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             prefetch={true}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#F59E0B] to-[#F97316] rounded-lg text-white font-medium hover:from-[#F97316] hover:to-[#FB7185] transition-all duration-300"
           >
-            Start Your Design Project
+            {t("sections.uiUxDesign.cta.button")}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </motion.div>

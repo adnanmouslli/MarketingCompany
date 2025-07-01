@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 import "swiper/css";
@@ -13,58 +12,38 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const slides = [
-  {
-    title: "Transform Your Digital Presence",
-    subtitle: "ATLANTS MARKETING",
-    description:
-      "We combine innovative marketing strategies with cutting-edge development by AnyCode to deliver exceptional digital experiences that drive real business growth.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-    accent: "from-[#3AA39C] to-[#1B365D]",
-    buttons: {
-      primary: { text: "Our Services", href: "/services" },
-      secondary: { text: "Get Started", href: "/contact" },
-    },
-  },
-  {
-    title: "Data-Driven Marketing Solutions",
-    subtitle: "STRATEGIC GROWTH",
-    description:
-      "Leverage our expertise in digital marketing and analytics to make informed decisions that boost your ROI and market presence.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
-    accent: "from-[#1B365D] to-[#3AA39C]",
-    buttons: {
-      primary: { text: "View Case Studies", href: "/case-studies" },
-      secondary: { text: "Free Consultation", href: "/contact" },
-    },
-  },
-  {
-    title: "The Power of Marketing & Development Synergy",
-    subtitle: "ATLANTS & ANYCODE",
-    description: "Experience the perfect blend of marketing excellence and technical innovation. Our partnership delivers end-to-end solutions that transform ideas into market-leading digital products.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
-    accent: "from-purple-600 to-emerald-600",
-    buttons: {
-      primary: { text: "Partnership Benefits", href: "/partnership" },
-      secondary: { text: "Success Stories", href: "/success-stories" }
-    }
-  }
-];
-
 export default function Hero() {
+  const { t } = useTranslation();
+
+  // استخرج بيانات السلايدز من الترجمة
+  type Slide = {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    accent: string;
+    buttons: {
+      primary: { text: string; href: string };
+      secondary: { text: string; href: string };
+    };
+  };
+
+  const slides = t("hero.slides", { returnObjects: true }) as Slide[];
+  
   return (
     <div className="relative h-screen">
       <Swiper
         effect="fade"
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation={{ prevEl: ".swiper-button-prev", nextEl: ".swiper-button-next" }}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
         className="h-full w-full"
       >
-        {slides.map((slide, index) => (
+        {slides.map((slide: any, index: number) => (
           <SwiperSlide key={index}>
             <div className="relative h-full w-full overflow-hidden">
               <div
@@ -72,7 +51,9 @@ export default function Hero() {
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
                 <div className="absolute inset-0 backdrop-blur-sm" />
-                <div className={`absolute inset-0 bg-gradient-to-r ${slide.accent} opacity-80`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${slide.accent} opacity-80`}
+                />
               </div>
               <div className="relative h-full flex items-center justify-center px-6 md:px-12">
                 <div className="max-w-3xl text-center text-white">

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 interface MessageData {
   id: number;
@@ -20,27 +20,26 @@ const fetchMessages = async (): Promise<MessageData[]> => {
 };
 
 const MessagesTable: React.FC = () => {
-  // Use `useQuery` to fetch and cache data
+  const { t } = useTranslation();
+
   const {
     data: messages,
     isLoading,
     isError,
     error,
-  } = useQuery<MessageData[], Error>(
-    {
-      queryKey: ["messages"], // Query key
-      queryFn: fetchMessages,
-    } // Fetch function}
-  );
+  } = useQuery<MessageData[], Error>({
+    queryKey: ["messages"],
+    queryFn: fetchMessages,
+  });
 
   if (isLoading) {
-    return <p className="text-center text-blue-500">Loading...</p>;
+    return <p className="text-center text-blue-500">{t("loading")}</p>;
   }
 
   if (isError) {
     return (
       <p className="text-center text-red-500">
-        Error: {(error as Error).message}
+        {t("error")}: {(error as Error).message}
       </p>
     );
   }
@@ -50,12 +49,24 @@ const MessagesTable: React.FC = () => {
       <table className="table-auto w-full border-collapse border border-gray-200 shadow-md">
         <thead className="bg-gray-200 text-gray-700">
           <tr>
-            <th className="px-4 py-2 border border-gray-300">ID</th>
-            <th className="px-4 py-2 border border-gray-300">Name</th>
-            <th className="px-4 py-2 border border-gray-300">Email</th>
-            <th className="px-4 py-2 border border-gray-300">Subject</th>
-            <th className="px-4 py-2 border border-gray-300">Message</th>
-            <th className="px-4 py-2 border border-gray-300">Created At</th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.id")}
+            </th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.name")}
+            </th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.email")}
+            </th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.subject")}
+            </th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.message")}
+            </th>
+            <th className="px-4 py-2 border border-gray-300">
+              {t("table.createdAt")}
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -47,7 +47,7 @@ export default function RootLayout({
               <Navbar />
               <LayoutExtra />
               <main className="flex-grow">{children}</main>
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </LoadingProvider>
         </QueryProvider>

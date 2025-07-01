@@ -1,10 +1,12 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Globe, Sparkles, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-// Hero Section Component
-export default function ContactHero (){
+export default function ContactHero() {
+  const { t } = useTranslation(); // assuming you named the namespace 'contact'
+
   return (
     <section className="relative overflow-hidden py-32 bg-slate-900">
       <div className="absolute inset-0 overflow-hidden">
@@ -27,18 +29,18 @@ export default function ContactHero (){
             className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-sm font-medium bg-white/10 text-white/80 backdrop-blur-sm mb-6"
           >
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>Get in Touch</span>
+            <span>{t("contact.hero.badge")}</span>
           </motion.div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
-            Let&apos;s Create Digital Excellence Together
+            {t("contact.hero.title")}
           </h1>
-          
+
           <p className="text-lg text-slate-300/80 leading-relaxed">
-            Ready to transform your digital presence? Our team of experts is here to help you achieve your marketing goals and drive remarkable results.
+            {t("contact.hero.description")}
           </p>
         </motion.div>
       </div>
     </section>
   );
-};
+}

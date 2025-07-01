@@ -11,45 +11,62 @@ import {
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function SocialMediaPage() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Instagram,
-      title: "Content Creation & Publishing",
-      description:
-        "Strategic planning, creation, and publishing of engaging social media content tailored to each platform and your target audience.",
+      title: t(
+        "sections.SocialMedia.servicesSection.services.contentCreation.title"
+      ),
+      description: t(
+        "sections.SocialMedia.servicesSection.services.contentCreation.description"
+      ),
       gradient: "from-[#EC4899] to-[#F472B6]",
     },
     {
       icon: BarChart2,
-      title: "Performance Analytics",
-      description:
-        "Comprehensive tracking and analysis of your social media metrics to measure campaign effectiveness and optimize strategy.",
+      title: t("sections.SocialMedia.servicesSection.services.analytics.title"),
+      description: t(
+        "sections.SocialMedia.servicesSection.services.analytics.description"
+      ),
       gradient: "from-[#F472B6] to-[#FB7185]",
     },
     {
       icon: Facebook,
-      title: "Community Management",
-      description:
-        "Proactive engagement with your audience through comments, messages, and social listening to build genuine connections.",
+      title: t(
+        "sections.SocialMedia.servicesSection.services.communityManagement.title"
+      ),
+      description: t(
+        "sections.SocialMedia.servicesSection.services.communityManagement.description"
+      ),
       gradient: "from-[#FB7185] to-[#FCA5A5]",
     },
     {
       icon: Twitter,
-      title: "Paid Social Campaigns",
-      description:
-        "Strategic development and management of targeted social media advertising campaigns to reach specific audience segments.",
+      title: t(
+        "sections.SocialMedia.servicesSection.services.paidCampaigns.title"
+      ),
+      description: t(
+        "sections.SocialMedia.servicesSection.services.paidCampaigns.description"
+      ),
       gradient: "from-[#EC4899] to-[#F472B6]",
     },
     {
       icon: Linkedin,
-      title: "Social Strategy Development",
-      description:
-        "Comprehensive social media strategy aligned with your business goals, brand identity, and target audience preferences.",
+      title: t(
+        "sections.SocialMedia.servicesSection.services.strategyDevelopment.title"
+      ),
+      description: t(
+        "sections.SocialMedia.servicesSection.services.strategyDevelopment.description"
+      ),
       gradient: "from-[#F472B6] to-[#FB7185]",
     },
   ];
+  
 
   const platforms = [
     { name: "Instagram", icon: Instagram, color: "bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]" },
@@ -82,8 +99,8 @@ export default function SocialMediaPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="Social Media Management"
-        description="Strategic social media solutions to build your brand presence, engage your audience, and drive meaningful business results."
+        title={t("sections.SocialMedia.hero.title")}
+        description={t("sections.SocialMedia.hero.description")}
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
@@ -99,19 +116,19 @@ export default function SocialMediaPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("sections.SocialMedia.overview.label")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#EC4899] to-[#F472B6] bg-clip-text text-transparent mb-8">
-            Elevate Your Social Media Presence
+            {t("sections.SocialMedia.overview.heading")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {`In today's digital landscape, effective social media management is essential for building brand awareness, engaging with your audience, and driving business growth. Our comprehensive Social Media Management services help you navigate the ever-evolving social landscape with strategic planning, creative content, consistent engagement, and data-driven optimization. Whether you're looking to establish your brand on social platforms, grow your following, or improve your social media ROI, our expert team will develop and execute a tailored strategy that aligns with your business objectives and resonates with your target audience.`}
+            {t("sections.SocialMedia.overview.paragraph")}
           </p>
         </motion.div>
-        <div className="w-full h-[2px] bg-gradient-to-r from-[#EC4899] to-[#F472B6] my-12 opacity-50" />
 
+        <div className="w-full h-[2px] bg-gradient-to-r from-[#EC4899] to-[#F472B6] my-12 opacity-50" />
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -124,19 +141,19 @@ export default function SocialMediaPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("sections.SocialMedia.servicesSection.label")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#F472B6] to-[#FB7185] bg-clip-text text-transparent"
             >
-              Social Media Services
+              {t("sections.SocialMedia.servicesSection.heading")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              {`Our comprehensive social media management services are designed to help you build a strong, engaging presence across all relevant platforms.`}
+              {t("sections.SocialMedia.servicesSection.description")}
             </motion.p>
           </div>
 
@@ -144,7 +161,7 @@ export default function SocialMediaPage() {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 variants={itemVariants}
@@ -183,7 +200,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Platforms
+              {t("sections.SocialMedia.platforms.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -192,7 +209,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#EC4899] to-[#F472B6] bg-clip-text text-transparent"
             >
-              Social Platforms We Manage
+              {t("sections.SocialMedia.platforms.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -201,7 +218,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We provide expert management across all major social media platforms, tailoring our approach to each platform&apos;s unique features and audience.
+              {t("sections.SocialMedia.platforms.paragraph")}
             </motion.p>
           </div>
 
@@ -215,10 +232,14 @@ export default function SocialMediaPage() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center"
               >
-                <div className={`w-16 h-16 ${platform.color} rounded-full flex items-center justify-center mb-3`}>
+                <div
+                  className={`w-16 h-16 ${platform.color} rounded-full flex items-center justify-center mb-3`}
+                >
                   <platform.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-medium text-[#111240]">{platform.name}</h3>
+                <h3 className="text-lg font-medium text-[#111240]">
+                  {platform.name}
+                </h3>
               </motion.div>
             ))}
           </div>
@@ -233,9 +254,11 @@ export default function SocialMediaPage() {
           className="mt-32 bg-gradient-to-r from-[#111240] to-[#1a1f4b] rounded-2xl p-10"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Social Media Success Metrics</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {t("sections.SocialMedia.metrics.heading")}
+            </h2>
             <p className="text-white/70 max-w-2xl mx-auto">
-              We measure success through meaningful metrics that align with your business objectives and demonstrate real value.
+              {t("sections.SocialMedia.metrics.paragraph")}
             </p>
           </div>
 
@@ -243,25 +266,25 @@ export default function SocialMediaPage() {
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
               <h3 className="text-3xl font-bold text-white mb-2">+48%</h3>
               <p className="text-white/70">
-                Average engagement rate increase for our clients within the first 3 months
+                {t("sections.SocialMedia.metrics.stats.engagement")}
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
               <h3 className="text-3xl font-bold text-white mb-2">+65%</h3>
               <p className="text-white/70">
-                Average growth in social media followers across platforms
+                {t("sections.SocialMedia.metrics.stats.followers")}
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
               <h3 className="text-3xl font-bold text-white mb-2">+32%</h3>
               <p className="text-white/70">
-                Average increase in website traffic from social media channels
+                {t("sections.SocialMedia.metrics.stats.traffic")}
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
               <h3 className="text-3xl font-bold text-white mb-2">+43%</h3>
               <p className="text-white/70">
-                Average improvement in social media conversion rates
+                {t("sections.SocialMedia.metrics.stats.conversion")}
               </p>
             </div>
           </div>
@@ -283,7 +306,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Our Approach
+              {t("sections.SocialMedia.processSection.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -292,7 +315,7 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#EC4899] to-[#F472B6] bg-clip-text text-transparent"
             >
-              Social Media Management Process
+              {t("sections.SocialMedia.processSection.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -301,93 +324,67 @@ export default function SocialMediaPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              Our strategic, data-driven approach ensures your social media presence consistently delivers value and meets your business objectives.
+              {t("sections.SocialMedia.processSection.paragraph")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#EC4899]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#EC4899]">1</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Audit & Strategy</h3>
-              <p className="text-sm text-[#111240]/60">
-                Analyzing your current social presence and developing a tailored strategy aligned with your goals.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#F472B6]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#F472B6]">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Content Planning</h3>
-              <p className="text-sm text-[#111240]/60">
-                Creating a detailed content calendar with platform-specific strategies and messaging.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#FB7185]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#FB7185]">3</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Content Creation</h3>
-              <p className="text-sm text-[#111240]/60">
-                Producing engaging multimedia content tailored to each platform&apos;s requirements and audience.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#FCA5A5]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#FCA5A5]">4</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Community Management</h3>
-              <p className="text-sm text-[#111240]/60">
-                Active engagement with your audience through comments, messages, and proactive outreach.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#EC4899]/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-[#EC4899]">5</span>
-              </div>
-              <h3 className="text-lg font-semibold text-[#111240] mb-4">Analysis & Optimization</h3>
-              <p className="text-sm text-[#111240]/60">
-                Continuous monitoring, reporting, and strategy refinement based on performance data.
-              </p>
-            </motion.div>
+            {[
+              "audit",
+              "planning",
+              "creation",
+              "management",
+              "optimization",
+            ].map((stepKey, idx) => (
+              <motion.div
+                key={stepKey}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * (idx + 1) }}
+                viewport={{ once: true }}
+                className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  className={`w-12 h-12 rounded-full flex items-center justify-center mb-6`}
+                  style={{
+                    backgroundColor: [
+                      "rgba(236, 72, 153, 0.1)",
+                      "rgba(244, 114, 182, 0.1)",
+                      "rgba(251, 113, 133, 0.1)",
+                      "rgba(252, 165, 165, 0.1)",
+                      "rgba(236, 72, 153, 0.1)",
+                    ][idx],
+                  }}
+                >
+                  <span
+                    className="text-2xl font-bold"
+                    style={{
+                      color: [
+                        "#EC4899",
+                        "#F472B6",
+                        "#FB7185",
+                        "#FCA5A5",
+                        "#EC4899",
+                      ][idx],
+                    }}
+                  >
+                    {idx + 1}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-[#111240] mb-4">
+                  {t(
+                    `sections.SocialMedia.processSection.steps.${stepKey}.title`
+                  )}
+                </h3>
+                <p className="text-sm text-[#111240]/60">
+                  {t(
+                    `sections.SocialMedia.processSection.steps.${stepKey}.description`
+                  )}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -396,16 +393,18 @@ export default function SocialMediaPage() {
           viewport={{ once: true }}
           className="mt-32 text-center"
         >
-          <h2 className="text-3xl font-bold text-[#111240] mb-6">Ready to Transform Your Social Media Presence?</h2>
+          <h2 className="text-3xl font-bold text-[#111240] mb-6">
+            {t("sections.SocialMedia.cta.heading")}
+          </h2>
           <p className="text-[#111240]/70 max-w-2xl mx-auto mb-8">
-            Contact our social media experts to discuss how we can help you build an engaging presence and achieve your business goals.
+            {t("sections.SocialMedia.cta.paragraph")}
           </p>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             prefetch={true}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#EC4899] to-[#F472B6] rounded-lg text-white font-medium hover:from-[#F472B6] hover:to-[#FB7185] transition-all duration-300"
           >
-            Schedule a Social Media contact
+            {t("sections.SocialMedia.cta.button")}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </motion.div>

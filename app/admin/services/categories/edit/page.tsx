@@ -1,17 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
-import {
-  ArrowLeft,
-  AlertTriangle,
-  X,
-  CheckCircle,
-  XCircle,
-  AlertCircle,
-} from 'lucide-react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, X, CheckCircle, XCircle, AlertCircle } from "lucide-react";
+import Link from "next/link";
+import { useTranslation } from "react-i18next"; // ✅ استيراد الترجمة
 
 interface Category {
   id?: string;
@@ -26,7 +20,7 @@ interface Category {
 }
 
 interface Alert {
-  type: 'success' | 'error' | 'info';
+  type: "success" | "error" | "info";
   message: string;
 }
 
@@ -35,70 +29,71 @@ export default function EditCategoryPage({
 }: {
   searchParams: { id?: string };
 }) {
+  const { t } = useTranslation(); 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState<Alert | null>(null);
 
   const [formData, setFormData] = useState<Partial<Category>>({
-    name: '',
-    title: '',
-    description: '',
+    name: "",
+    title: "",
+    description: "",
     overview: {
-      title: '',
-      content: ''
+      title: "",
+      content: "",
     },
-    published: false
+    published: false,
   });
 
   useEffect(() => {
     const fetchCategory = async () => {
       if (!searchParams.id) {
-        router.push('/admin/services/categories');
+        router.push("/admin/services/categories");
         return;
       }
 
       try {
-        // API call would go here
-        // For now, we'll use mock data
         const mockCategory = {
           id: searchParams.id,
-          name: 'Business Process Outsourcing',
-          title: 'Business Outsourcing',
-          description: 'IC&I HR outsourcing services is one of our core strengths.',
+          name: "Business Process Outsourcing",
+          title: "Business Outsourcing",
+          description:
+            "IC&I HR outsourcing services is one of our core strengths.",
           overview: {
-            title: 'Market Leading HR Solutions',
-            content: 'We are the Syrian market leader with the largest market share in providing full recruitment services.'
+            title: "Market Leading HR Solutions",
+            content:
+              "We are the Syrian market leader with the largest market share in providing full recruitment services.",
           },
-          published: true
+          published: true,
         };
         setFormData(mockCategory);
       } catch (error) {
         setAlert({
-          type: 'error',
-          message: 'Failed to fetch category'
+          type: "error",
+          message: t("editCategory.fetchError"), // ✅ ترجمة الخطأ
         });
       }
     };
 
     fetchCategory();
-  }, [searchParams.id, router]);
+  }, [searchParams.id, router, t]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    if (name.startsWith('overview.')) {
-      const field = name.split('.')[1];
-      setFormData(prev => ({
+    if (name.startsWith("overview.")) {
+      const field = name.split(".")[1];
+      setFormData((prev) => ({
         ...prev,
         overview: {
-          title: prev.overview?.title ?? '',
-          content: prev.overview?.content ?? '',
-          [field]: value
-        }
+          title: prev.overview?.title ?? "",
+          content: prev.overview?.content ?? "",
+          [field]: value,
+        },
       }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -107,21 +102,20 @@ export default function EditCategoryPage({
     setLoading(true);
 
     try {
-      // API call would go here
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setAlert({
-        type: 'success',
-        message: 'Category updated successfully'
+        type: "success",
+        message: t("editCategory.success"), // ✅ ترجمة النجاح
       });
 
       setTimeout(() => {
-        router.push('/admin/services/categories');
+        router.push("/admin/services/categories");
       }, 1000);
     } catch (error) {
       setAlert({
-        type: 'error',
-        message: 'Failed to save category'
+        type: "error",
+        message: t("editCategory.error"), // ✅ ترجمة الخطأ
       });
     } finally {
       setLoading(false);
@@ -137,7 +131,7 @@ export default function EditCategoryPage({
             className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Categories
+            {t("editCategory.back")}
           </Link>
         </div>
 
@@ -148,22 +142,28 @@ export default function EditCategoryPage({
             className="bg-[#2e3267] rounded-lg p-6 mb-6"
           >
             <div className="flex items-center justify-between mb-6">
-              <h1 className="text-2xl font-bold">Edit Category</h1>
+              <h1 className="text-2xl font-bold">{t("editCategory.title")}</h1>
               {loading && (
                 <div className="flex items-center text-gray-400">
                   <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="w-5 h-5 border-2 border-current border-t-transparent rounded-full mr-2"
                   />
-                  Saving...
+                  {t("editCategory.saving")}
                 </div>
               )}
             </div>
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Name</label>
+                <label className="block text-sm font-medium mb-1">
+                  {t("editCategory.name")}
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -175,7 +175,9 @@ export default function EditCategoryPage({
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Title</label>
+                <label className="block text-sm font-medium mb-1">
+                  {t("editCategory.titleLabel")}
+                </label>
                 <input
                   type="text"
                   name="title"
@@ -187,7 +189,9 @@ export default function EditCategoryPage({
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Description</label>
+                <label className="block text-sm font-medium mb-1">
+                  {t("editCategory.description")}
+                </label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -199,10 +203,14 @@ export default function EditCategoryPage({
               </div>
 
               <div className="border-t border-gray-700 pt-4">
-                <h2 className="text-lg font-medium mb-4">Overview</h2>
+                <h2 className="text-lg font-medium mb-4">
+                  {t("editCategory.overviewTitle")}
+                </h2>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1">Title</label>
+                    <label className="block text-sm font-medium mb-1">
+                      {t("editCategory.overviewSectionTitle")}
+                    </label>
                     <input
                       type="text"
                       name="overview.title"
@@ -213,7 +221,9 @@ export default function EditCategoryPage({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">Content</label>
+                    <label className="block text-sm font-medium mb-1">
+                      {t("editCategory.overviewSectionContent")}
+                    </label>
                     <textarea
                       name="overview.content"
                       value={formData.overview?.content}
@@ -232,10 +242,15 @@ export default function EditCategoryPage({
                     type="checkbox"
                     name="published"
                     checked={formData.published}
-                    onChange={e => setFormData(prev => ({ ...prev, published: e.target.checked }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        published: e.target.checked,
+                      }))
+                    }
                     className="rounded bg-[#1a1f4b] border-gray-600 text-blue-500 focus:ring-blue-500"
                   />
-                  <span className="ml-2">Published</span>
+                  <span className="ml-2">{t("editCategory.published")}</span>
                 </label>
               </div>
             </div>
@@ -248,28 +263,30 @@ export default function EditCategoryPage({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 className={`mb-6 p-4 rounded-lg flex items-start ${
-                  alert.type === 'success'
-                    ? 'bg-green-900/50'
-                    : alert.type === 'error'
-                    ? 'bg-red-900/50'
-                    : 'bg-blue-900/50'
+                  alert.type === "success"
+                    ? "bg-green-900/50"
+                    : alert.type === "error"
+                    ? "bg-red-900/50"
+                    : "bg-blue-900/50"
                 }`}
               >
-                {alert.type === 'success' ? (
+                {alert.type === "success" ? (
                   <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
-                ) : alert.type === 'error' ? (
+                ) : alert.type === "error" ? (
                   <XCircle className="w-5 h-5 text-red-400 mt-0.5" />
                 ) : (
                   <AlertCircle className="w-5 h-5 text-blue-400 mt-0.5" />
                 )}
                 <div className="ml-3 flex-1">
-                  <p className={`text-sm ${
-                    alert.type === 'success'
-                      ? 'text-green-400'
-                      : alert.type === 'error'
-                      ? 'text-red-400'
-                      : 'text-blue-400'
-                  }`}>
+                  <p
+                    className={`text-sm ${
+                      alert.type === "success"
+                        ? "text-green-400"
+                        : alert.type === "error"
+                        ? "text-red-400"
+                        : "text-blue-400"
+                    }`}
+                  >
                     {alert.message}
                   </p>
                 </div>
@@ -289,14 +306,14 @@ export default function EditCategoryPage({
               href="/admin/services/categories"
               className="px-4 py-2 rounded-md bg-gray-600 hover:bg-gray-500 transition-colors"
             >
-              Cancel
+              {t("editCategory.cancel")}
             </Link>
             <button
               type="submit"
               disabled={loading}
               className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Save Changes
+              {t("editCategory.save")}
             </button>
           </div>
         </form>

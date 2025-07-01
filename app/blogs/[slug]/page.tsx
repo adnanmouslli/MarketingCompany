@@ -6,6 +6,7 @@ import { Calendar, Tag, ArrowLeft, Share2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 interface Author {
   id: number;
@@ -30,6 +31,7 @@ interface BlogPost {
 }
 
 export default function BlogPost() {
+  const { t, i18n } = useTranslation();
   const { slug } = useParams();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,16 +46,11 @@ export default function BlogPost() {
   const fetchBlogPost = async () => {
     try {
       const decodedSlug = decodeURIComponent(slug as string);
-      console.log("Fetching post with slug:", decodedSlug);
-
       const response = await apiClient.get(`/api/blog/slug/${decodedSlug}`);
-      console.log("Response status:", response.status);
 
       if (response.statusText.toLowerCase() !== "ok") {
         throw new Error(response.data.message || "Failed to fetch blog post");
       }
-
-      console.log("Response data:", response.data);
 
       if (response.data.status === "success" && response.data.post) {
         setPost(response.data.post);
@@ -61,7 +58,6 @@ export default function BlogPost() {
         throw new Error("Invalid response format");
       }
     } catch (error) {
-      console.error("Error fetching blog post:", error);
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
       setLoading(false);
@@ -78,14 +74,12 @@ export default function BlogPost() {
           </div>
 
           <div className="relative container mx-auto px-4 py-32">
-            <div className="max-w-4xl mx-auto animate-pulse">
-              <div className="h-4 bg-white/10 w-24 rounded mb-6" />
-              <div className="h-12 bg-white/10 w-3/4 rounded mb-6" />
-              <div className="flex gap-4">
-                <div className="h-8 bg-white/10 w-32 rounded" />
-                <div className="h-8 bg-white/10 w-32 rounded" />
-                <div className="h-8 bg-white/10 w-32 rounded" />
-              </div>
+            <div className="max-w-4xl mx-auto animate-pulse text-center text-white">
+              <h2 className="text-3xl font-bold mb-4">
+                {t("blogPost.loading.title")}
+              </h2>
+              <p>{t("blogPost.loading.subtitle1")}</p>
+              <p>{t("blogPost.loading.subtitle2")}</p>
             </div>
           </div>
         </div>
@@ -103,17 +97,17 @@ export default function BlogPost() {
           </div>
 
           <div className="relative container mx-auto px-4 py-32">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl font-bold text-white mb-6">
-                Post Not Found
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <h1 className="text-4xl font-bold mb-6">
+                {t("blogPost.error.title")}
               </h1>
-              {error && <p className="text-white/80 mb-6">{error}</p>}
+              {error && <p className="mb-6">{error}</p>}
               <Link
                 href="/blogs"
-                className="inline-flex items-center text-white/80 hover:text-white transition-colors group bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
+                className="inline-flex items-center hover:text-white transition-colors group bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
               >
                 <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-                Back to Blogs
+                {t("blogPost.error.backButton")}
               </Link>
             </div>
           </div>
@@ -141,11 +135,10 @@ export default function BlogPost() {
           >
             <Link
               href="/blogs"
-              className="inline-flex items-center text-white/80 hover:text-white mb-6 
-                transition-colors group bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
+              className="inline-flex items-center hover:text-white transition-colors mb-6 group bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/80"
             >
               <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-              Back to Blogs
+              {t("blogPost.backToBlogs")}
             </Link>
             <h1 className="text-6xl font-bold bg-gradient-to-r from-white via-purple-100 to-white/80 bg-clip-text text-transparent mb-6">
               {post.title}
@@ -153,7 +146,7 @@ export default function BlogPost() {
             <div className="flex flex-wrap items-center gap-6 text-white/80">
               <div className="flex items-center bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
                 <Calendar className="w-4 h-4 mr-2" />
-                {new Date(post.date).toLocaleDateString("en-GB", {
+                {new Date(post.date).toLocaleDateString(i18n.language, {
                   day: "2-digit",
                   month: "short",
                   year: "numeric",
@@ -164,12 +157,12 @@ export default function BlogPost() {
                 {post.category.name}
               </div>
               <div className="flex items-center bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                By {post.author.name}
+                {t("blogPost.byAuthor", { author: post.author.name })}
               </div>
               <button
                 className="flex items-center hover:text-white transition-colors bg-white/5 hover:bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
                 onClick={() =>
-                  navigator.share({
+                  navigator.share?.({
                     title: post.title,
                     text: post.title,
                     url: window.location.href,
@@ -177,7 +170,7 @@ export default function BlogPost() {
                 }
               >
                 <Share2 className="w-4 h-4 mr-2" />
-                Share
+                {t("blogPost.shareButton")}
               </button>
             </div>
           </motion.div>

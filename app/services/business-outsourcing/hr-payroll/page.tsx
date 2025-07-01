@@ -7,47 +7,42 @@ import {
   MessageSquare,
   Heart,
   ArrowUpDown,
-  ArrowRight,
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 export default function HRPayrollPage() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Calculator,
-      title: "Payroll Processing",
-      description:
-        "Streamline your payroll operations with comprehensive automated calculations, tax processing, and efficient payment distribution systems.",
+      title: t("hrPayroll.services.0.title"),
+      description: t("hrPayroll.services.0.description"),
       gradient: "from-[#00B4D8] to-[#4A9BE4]",
     },
     {
       icon: BarChart,
-      title: "Performance Monitoring",
-      description:
-        "Track and analyze comprehensive performance metrics to measure team success and align organizational goals with strategic opportunities.",
+      title: t("hrPayroll.services.1.title"),
+      description: t("hrPayroll.services.1.description"),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
     {
       icon: MessageSquare,
-      title: "Feedback and Coaching",
-      description:
-        "Foster professional growth through structured feedback sessions and personalized development strategies for long-term career advancement.",
+      title: t("hrPayroll.services.2.title"),
+      description: t("hrPayroll.services.2.description"),
       gradient: "from-[#8590EA] to-[#B5C6F4]",
     },
     {
       icon: Heart,
-      title: "Employee Engagement",
-      description:
-        "Build and maintain a positive workplace culture through targeted strategies designed to enhance team satisfaction and long-term retention.",
+      title: t("hrPayroll.services.3.title"),
+      description: t("hrPayroll.services.3.description"),
       gradient: "from-[#00B4D8] to-[#4A9BE4]",
     },
     {
       icon: ArrowUpDown,
-      title: "Two-Way Communication",
-      description:
-        "Enable transparent and effective dialogue between team members and leadership through dedicated communication channels and protocols.",
+      title: t("hrPayroll.services.4.title"),
+      description: t("hrPayroll.services.4.description"),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
   ];
@@ -74,11 +69,11 @@ export default function HRPayrollPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="HR Payroll & Performance Management"
-        description="Optimizing Payroll and Driving Employee Performance."
+        title={t("hrPayroll.heroTitle")}
+        description={t("hrPayroll.heroDescription")}
       />
 
-      <div className="w-full lg:w-[1280px]  mx-auto px-4 py-24">
+      <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,20 +86,15 @@ export default function HRPayrollPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("hrPayroll.overviewLabel")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#00B4D8] to-[#4A9BE4] bg-clip-text text-transparent mb-8">
-            Streamlined Payroll Solutions
+            {t("hrPayroll.overviewTitle")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            Managing payroll and employee performance is a critical aspect of
-            running a successful business, and IC&I is here to simplify the
-            process. We currently manage payroll for over 700 personnel,
-            ensuring timely and accurate payments, while also providing
-            comprehensive performance management services that help our clients
-            maximize the potential of their workforce.
+            {t("hrPayroll.overviewContent")}
           </p>
         </motion.div>
 
@@ -122,21 +112,19 @@ export default function HRPayrollPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("hrPayroll.sectionLabel")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#00B4D8] to-[#4A9BE4] bg-clip-text text-transparent"
             >
-              Payroll & Performance Solutions
+              {t("hrPayroll.sectionTitle")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              By outsourcing your payroll & performance management to us, you
-              can focus on strategic business initiatives, knowing that your HR
-              functions are in expert hands.
+              {t("hrPayroll.sectionContent")}
             </motion.p>
           </div>
 
@@ -146,7 +134,7 @@ export default function HRPayrollPage() {
           >
             {services.map((service, index) => (
               <motion.div
-                key={service.title}
+                key={index}
                 variants={itemVariants}
                 className="group relative"
               >

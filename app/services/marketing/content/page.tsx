@@ -1,67 +1,126 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  FileText, 
-  PenTool, 
-  Compass, 
-  BarChart2, 
-  Users, 
-  ArrowRight 
+import {
+  FileText,
+  PenTool,
+  Compass,
+  BarChart2,
+  Users,
+  ArrowRight,
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function ContentStrategyPage() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Compass,
-      title: "Content Strategy Development",
-      description:
-        "Comprehensive content strategies aligned with your business goals, target audience needs, and marketing objectives.",
+      title: t(
+        "sections.Content.servicesSection.services.contentStrategyDevelopment.title"
+      ),
+      description: t(
+        "sections.Content.servicesSection.services.contentStrategyDevelopment.description"
+      ),
       gradient: "from-[#14B8A6] to-[#2DD4BF]",
     },
     {
       icon: FileText,
-      title: "Content Creation",
-      description:
-        "High-quality, engaging content creation across various formats including blog posts, articles, whitepapers, and more.",
+      title: t(
+        "sections.Content.servicesSection.services.contentCreation.title"
+      ),
+      description: t(
+        "sections.Content.servicesSection.services.contentCreation.description"
+      ),
       gradient: "from-[#2DD4BF] to-[#5EEAD4]",
     },
     {
       icon: Users,
-      title: "Audience Research",
-      description:
-        "In-depth audience analysis to understand their needs, pain points, and content preferences to guide your strategy.",
+      title: t(
+        "sections.Content.servicesSection.services.audienceResearch.title"
+      ),
+      description: t(
+        "sections.Content.servicesSection.services.audienceResearch.description"
+      ),
       gradient: "from-[#5EEAD4] to-[#99F6E4]",
     },
     {
       icon: PenTool,
-      title: "Content Optimization",
-      description:
-        "Refining existing content to improve performance, SEO visibility, engagement, and conversion rates.",
+      title: t(
+        "sections.Content.servicesSection.services.contentOptimization.title"
+      ),
+      description: t(
+        "sections.Content.servicesSection.services.contentOptimization.description"
+      ),
       gradient: "from-[#14B8A6] to-[#2DD4BF]",
     },
     {
       icon: BarChart2,
-      title: "Content Performance Analysis",
-      description:
-        "Comprehensive analytics and reporting to measure content effectiveness and guide future content decisions.",
+      title: t(
+        "sections.Content.servicesSection.services.contentPerformanceAnalysis.title"
+      ),
+      description: t(
+        "sections.Content.servicesSection.services.contentPerformanceAnalysis.description"
+      ),
       gradient: "from-[#2DD4BF] to-[#5EEAD4]",
     },
   ];
 
   const contentTypes = [
-    { title: "Blog Posts", description: "Regular articles that demonstrate expertise and improve SEO" },
-    { title: "Case Studies", description: "Success stories that showcase real results for clients" },
-    { title: "Whitepapers", description: "In-depth research reports that establish thought leadership" },
-    { title: "Infographics", description: "Visual content that simplifies complex information" },
-    { title: "Videos", description: "Engaging visual content for demonstrations and storytelling" },
-    { title: "Email Newsletters", description: "Regular updates to nurture leads and maintain engagement" },
-    { title: "Social Media Content", description: "Platform-specific content for community building" },
-    { title: "Website Copy", description: "Persuasive text that drives visitors to take action" },
+    {
+      title: t("sections.Content.contentFormats.types.blogPosts.title"),
+      description: t(
+        "sections.Content.contentFormats.types.blogPosts.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.caseStudies.title"),
+      description: t(
+        "sections.Content.contentFormats.types.caseStudies.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.whitepapers.title"),
+      description: t(
+        "sections.Content.contentFormats.types.whitepapers.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.infographics.title"),
+      description: t(
+        "sections.Content.contentFormats.types.infographics.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.videos.title"),
+      description: t(
+        "sections.Content.contentFormats.types.videos.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.emailNewsletters.title"),
+      description: t(
+        "sections.Content.contentFormats.types.emailNewsletters.description"
+      ),
+    },
+    {
+      title: t(
+        "sections.Content.contentFormats.types.socialMediaContent.title"
+      ),
+      description: t(
+        "sections.Content.contentFormats.types.socialMediaContent.description"
+      ),
+    },
+    {
+      title: t("sections.Content.contentFormats.types.websiteCopy.title"),
+      description: t(
+        "sections.Content.contentFormats.types.websiteCopy.description"
+      ),
+    },
   ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -84,11 +143,12 @@ export default function ContentStrategyPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="Content Strategy"
-        description="Strategic content planning and creation that engages your audience, builds authority, and drives business results."
+        title={t("sections.Content.hero.title")}
+        description={t("sections.Content.hero.description")}
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
+        {/* Overview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,19 +161,22 @@ export default function ContentStrategyPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("sections.Content.overview.label")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#14B8A6] to-[#2DD4BF] bg-clip-text text-transparent mb-8">
-            Strategic Content That Drives Results
+            {t("sections.Content.overview.heading")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {`Content is at the heart of effective digital marketing, but random content creation without a clear strategy rarely delivers results. Our Content Strategy services provide a structured approach to planning, creating, and optimizing content that resonates with your target audience and supports your business objectives. We focus on developing comprehensive strategies that align with your brand voice, address audience needs throughout the customer journey, and leverage the right formats and channels to maximize impact. From initial audience research to ongoing performance analysis, we ensure your content marketing efforts are strategic, cohesive, and measurable.`}
+            {t("sections.Content.overview.paragraph")}
           </p>
         </motion.div>
+
+        {/* Divider before services */}
         <div className="w-full h-[2px] bg-gradient-to-r from-[#14B8A6] to-[#2DD4BF] my-12 opacity-50" />
 
+        {/* Services Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -126,19 +189,19 @@ export default function ContentStrategyPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("sections.Content.servicesSection.label")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#2DD4BF] to-[#5EEAD4] bg-clip-text text-transparent"
             >
-              Content Strategy Services
+              {t("sections.Content.servicesSection.heading")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              {`Our comprehensive content strategy services are designed to help you create purposeful content that engages your audience and achieves your business goals.`}
+              {t("sections.Content.servicesSection.description")}
             </motion.p>
           </div>
 
@@ -185,7 +248,7 @@ export default function ContentStrategyPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Content Formats
+              {t("sections.Content.contentFormats.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -194,7 +257,7 @@ export default function ContentStrategyPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#14B8A6] to-[#2DD4BF] bg-clip-text text-transparent"
             >
-              Strategic Content Types
+              {t("sections.Content.contentFormats.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -203,22 +266,28 @@ export default function ContentStrategyPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We develop and create various content formats tailored to your audience preferences and marketing objectives.
+              {t("sections.Content.contentFormats.paragraph")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {contentTypes.map((type, index) => (
+            {Object.entries(
+              t("sections.Content.contentFormats.types", {
+                returnObjects: true,
+              })
+            ).map(([key, value]: any, index) => (
               <motion.div
-                key={type.title}
+                key={key}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-200 hover:shadow-md transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-[#111240] mb-2">{type.title}</h3>
-                <p className="text-sm text-[#111240]/60">{type.description}</p>
+                <h3 className="text-lg font-semibold text-[#111240] mb-2">
+                  {value.title}
+                </h3>
+                <p className="text-sm text-[#111240]/60">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -233,49 +302,35 @@ export default function ContentStrategyPage() {
           className="mt-32 bg-gradient-to-r from-[#111240] to-[#1a1f4b] rounded-2xl p-10"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Content Strategy Process</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {t("sections.Content.processSection.heading")}
+            </h2>
             <p className="text-white/70 max-w-2xl mx-auto">
-              We follow a systematic approach to developing and implementing content strategies that deliver measurable results.
+              {t("sections.Content.processSection.paragraph")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-white">1</span>
+            {Object.entries(
+              t("sections.Content.processSection.steps", {
+                returnObjects: true,
+              })
+            ).map(([key, step]: any, index) => (
+              <div
+                key={key}
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20"
+              >
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <span className="text-2xl font-bold text-white">
+                    {index + 1}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-white/70">{step.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Research & Analysis</h3>
-              <p className="text-white/70">
-                Understanding your audience, competitors, and business objectives to develop a data-informed strategy.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-white">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Strategy Development</h3>
-              <p className="text-white/70">
-                Creating a comprehensive content plan with topics, formats, channels, and editorial calendar.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-white">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Content Creation</h3>
-              <p className="text-white/70">
-                Producing high-quality content that aligns with your brand voice and resonates with your audience.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-white">4</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Distribution & Analysis</h3>
-              <p className="text-white/70">
-                Publishing, promoting, measuring performance, and continuously optimizing your content strategy.
-              </p>
-            </div>
+            ))}
           </div>
         </motion.div>
 
@@ -287,16 +342,18 @@ export default function ContentStrategyPage() {
           viewport={{ once: true }}
           className="mt-32 text-center"
         >
-          <h2 className="text-3xl font-bold text-[#111240] mb-6">Ready to Develop Your Content Strategy?</h2>
+          <h2 className="text-3xl font-bold text-[#111240] mb-6">
+            {t("sections.Content.cta.heading")}
+          </h2>
           <p className="text-[#111240]/70 max-w-2xl mx-auto mb-8">
-            Contact our content strategy specialists to discuss how we can help you create purposeful content that engages your audience and drives results.
+            {t("sections.Content.cta.paragraph")}
           </p>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             prefetch={true}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#14B8A6] to-[#2DD4BF] rounded-lg text-white font-medium hover:from-[#2DD4BF] hover:to-[#5EEAD4] transition-all duration-300"
           >
-            Schedule a Content Strategy contact
+            {t("sections.Content.cta.button")}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </motion.div>

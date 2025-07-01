@@ -1,16 +1,16 @@
-import axios from "axios";
+
+"use client";
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import styled from "styled-components";
 import * as Yup from "yup";
-import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
-// Define form data type
 interface FormData {
   name: string;
   email: string;
@@ -19,23 +19,23 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
-  const router = useRouter();
+  const { t } = useTranslation();
   const [isSending, setIsSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
   const validationSchema = Yup.object({
     name: Yup.string()
-      .min(2, "Name must be at least 2 characters")
-      .required("Name is required"),
+      .min(2, t("form.errors.nameMin"))
+      .required(t("form.errors.nameRequired")),
     email: Yup.string()
-      .email("Invalid email format")
-      .required("Email is required"),
+      .email(t("form.errors.emailInvalid"))
+      .required(t("form.errors.emailRequired")),
     subject: Yup.string()
-      .min(5, "Subject must be at least 5 characters")
-      .required("Subject is required"),
+      .min(5, t("form.errors.subjectMin"))
+      .required(t("form.errors.subjectRequired")),
     message: Yup.string()
-      .min(10, "Message must be at least 10 characters")
-      .required("Message is required"),
+      .min(10, t("form.errors.messageMin"))
+      .required(t("form.errors.messageRequired")),
   });
 
   const {
@@ -47,7 +47,6 @@ const ContactForm: React.FC = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  // Form submission handler
   const onSubmit = async (formData: FormData) => {
     setIsSending(true);
     try {
@@ -56,10 +55,7 @@ const ContactForm: React.FC = () => {
       if (response.status === 200) {
         setShowSuccess(true);
         reset();
-        // Hide success message after 3 seconds
-        setTimeout(() => {
-          setShowSuccess(false);
-        }, 3000);
+        setTimeout(() => setShowSuccess(false), 3000);
       } else {
         throw new Error(response.data?.message || "Failed to send message");
       }
@@ -80,7 +76,7 @@ const ContactForm: React.FC = () => {
             exit={{ opacity: 0, y: -50 }}
           >
             <CheckCircle2 size={20} />
-            Message sent successfully
+            {t("form.success")}
           </SuccessNotification>
         )}
       </AnimatePresence>
@@ -90,56 +86,54 @@ const ContactForm: React.FC = () => {
           handleSubmit(onSubmit)(e);
         }}
       >
-        <Title>Contact Us</Title>
-        <Description>
-          We would love to hear from you! Fill out the form below.
-        </Description>
+        <Title>{t("form.title")}</Title>
+        <Description>{t("form.description")}</Description>
 
         <InputWrapper>
           <Input
             type="text"
-            placeholder="Your Name"
+            placeholder={t("form.name")}
             {...register("name")}
             $isError={!!errors.name}
           />
-          {errors.name && <ErrorMessage>{errors.name?.message}</ErrorMessage>}
+          {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
         </InputWrapper>
 
         <InputWrapper>
           <Input
             type="email"
-            placeholder="Your Email"
+            placeholder={t("form.email")}
             {...register("email")}
             $isError={!!errors.email}
           />
-          {errors.email && <ErrorMessage>{errors.email?.message}</ErrorMessage>}
+          {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
         </InputWrapper>
 
         <InputWrapper>
           <Input
             type="text"
-            placeholder="Subject"
+            placeholder={t("form.subject")}
             {...register("subject")}
             $isError={!!errors.subject}
           />
           {errors.subject && (
-            <ErrorMessage>{errors.subject?.message}</ErrorMessage>
+            <ErrorMessage>{errors.subject.message}</ErrorMessage>
           )}
         </InputWrapper>
 
         <InputWrapper>
           <Textarea
-            placeholder="Your Message"
+            placeholder={t("form.message")}
             {...register("message")}
             $isError={!!errors.message}
           />
           {errors.message && (
-            <ErrorMessage>{errors.message?.message}</ErrorMessage>
+            <ErrorMessage>{errors.message.message}</ErrorMessage>
           )}
         </InputWrapper>
 
         <SubmitButton type="submit" disabled={isSending}>
-          {isSending ? "Sending..." : "Send Message"}
+          {isSending ? t("form.sending") : t("form.submit")}
         </SubmitButton>
       </FormWrapper>
     </Container>

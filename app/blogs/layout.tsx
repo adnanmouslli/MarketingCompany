@@ -1,14 +1,28 @@
-import { Metadata } from 'next';
+"use client";
 
-export const metadata: Metadata = {
-  title: 'Blog | IC&I',
-  description: 'Latest insights and updates from IC&I on technology, business, and industry trends.',
-};
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = t("blog.title");
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute("content", t("blog.description"));
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = t("blog.description");
+      document.head.appendChild(meta);
+    }
+  }, [t]);
+
   return <>{children}</>;
 }

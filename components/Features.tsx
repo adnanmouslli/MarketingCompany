@@ -5,6 +5,7 @@ import { Shield, Clock, Users, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 const iconMap = {
   Shield: Shield,
@@ -14,6 +15,8 @@ const iconMap = {
 };
 
 export default function Features() {
+  const { t } = useTranslation();
+
   const {
     data: homeData,
     isError,
@@ -59,12 +62,12 @@ export default function Features() {
     return (
       <div className="text-center py-12">
         <h3 className="text-xl font-semibold text-gray-500 mb-2">
-          No Advantages Available
+          {t("features.noData")}
         </h3>
       </div>
     );
   }
-  
+
   return (
     <section className="py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -84,19 +87,19 @@ export default function Features() {
             variants={itemVariants}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
           >
-            Our Advantages
+            {t("features.badge")}
           </motion.span>
           <motion.h2
             variants={itemVariants}
             className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#111240] to-[#111240]/80 bg-clip-text text-transparent"
           >
-            {homeData.title}
+            {homeData.title || t("features.title")}
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
           >
-            {homeData.subtitle}
+            {homeData.subtitle || t("features.description")}
           </motion.p>
         </motion.div>
 

@@ -5,27 +5,29 @@ import About from "@/components/admin/home/About";
 import Services from "@/components/admin/home/Services";
 import Features from "@/components/admin/home/Features";
 import { motion } from "framer-motion";
-import { Info, Settings, BookOpen, Layout } from "lucide-react";
+import { Info, Settings, Layout } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function HomePage() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("about");
 
   const tabs = [
     {
       id: "about",
-      label: "About Section",
+      label: t("about.aboutUs"),
       component: <About />,
       icon: <Info className="w-5 h-5" />,
     },
     {
       id: "services",
-      label: "Services",
+      label: t("services.title"),
       component: <Services />,
       icon: <Settings className="w-5 h-5" />,
     },
     {
       id: "features",
-      label: "Features",
+      label: t("features.title"),
       component: <Features />,
       icon: <Layout className="w-5 h-5" />,
     },

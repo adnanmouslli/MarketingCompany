@@ -10,60 +10,70 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   const aboutData = {
-    title: t("about.title"),
-    subtitle: t("about.subtitle"),
+    title: t("about.main.title"), // لاحظ استخدام "main"
+    subtitle: t("about.main.subtitle"),
     description: [
-      t("about.description.0"),
-      t("about.description.1"),
-      t("about.description.2"),
+      t("about.main.description.0"),
+      t("about.main.description.1"),
+      t("about.main.description.2"),
     ],
     img: "/background.png",
-    mission: t("about.mission"),
-    vision: t("about.vision"),
+    mission: t("about.main.mission"),
+    vision: t("about.main.vision"),
     values: [
       {
         id: 1,
         icon: "Globe",
-        title: t("about.values.globalApproach.title"),
-        text: t("about.values.globalApproach.text"),
+        title: t("about.main.values.0.title"),
+        text: t("about.main.values.0.text"),
       },
       {
         id: 2,
         icon: "Target",
-        title: t("about.values.resultsFocused.title"),
-        text: t("about.values.resultsFocused.text"),
+        title: t("about.main.values.1.title"),
+        text: t("about.main.values.1.text"),
       },
       {
         id: 3,
         icon: "Compass",
-        title: t("about.values.clearVision.title"),
-        text: t("about.values.clearVision.text"),
+        title: t("about.main.values.2.title"),
+        text: t("about.main.values.2.text"),
       },
       {
         id: 4,
         icon: "Shield",
-        title: t("about.values.strongEthics.title"),
-        text: t("about.values.strongEthics.text"),
+        title: t("about.main.values.3.title"),
+        text: t("about.main.values.3.text"),
       },
       {
         id: 5,
         icon: "Code",
-        title: t("about.values.technicalExcellence.title"),
-        text: t("about.values.technicalExcellence.text"),
+        title: t("about.main.values.4.title"),
+        text: t("about.main.values.4.text"),
       },
       {
         id: 6,
         icon: "Megaphone",
-        title: t("about.values.marketingCreativity.title"),
-        text: t("about.values.marketingCreativity.text"),
+        title: t("about.main.values.5.title"),
+        text: t("about.main.values.5.text"),
       },
     ],
     stats: [
-      { id: 1, number: "7+", label: t("about.stats.yearsExperience") },
-      { id: 2, number: "150+", label: t("about.stats.completedProjects") },
-      { id: 3, number: "35+", label: t("about.stats.teamExperts") },
-      { id: 4, number: "96%", label: t("about.stats.clientSatisfaction") },
+      { id: 1, number: "7+", label: t("about.main.stats.0.label") },
+      { id: 2, number: "150+", label: t("about.main.stats.1.label") },
+      { id: 3, number: "35+", label: t("about.main.stats.2.label") },
+      { id: 4, number: "96%", label: t("about.main.stats.3.label") },
     ],
+    ourStoryTitle: t("about.main.ourStory"),
+    missionTitle: t("about.main.ourMission"),
+    visionTitle: t("about.main.ourVision"),
+    valuesBadge: t("about.main.ourValues"),
+    valuesTitle: t("about.main.whatDrivesUs"),
+    valuesDescription: t("about.main.coreValuesText"),
+    ctaTitle: t("about.main.readyBusiness"),
+    ctaDescription: t("about.main.helpAchieveGoals"),
+    ctaButton: t("about.main.contactUs"),
+    imgAlt: "Atlants background image",
   };
 
   const containerVariants = {
@@ -76,7 +86,7 @@ export default function AboutPage() {
     visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
-  // دالة لإرجاع أيقونة مع type assertion
+  // دالة لإرجاع الأيقونة
   function getIcon(name: string): React.FC<React.SVGProps<SVGSVGElement>> {
     if (name in LucideIcons) {
       return LucideIcons[name as keyof typeof LucideIcons] as React.FC<
@@ -90,7 +100,6 @@ export default function AboutPage() {
     <div className="min-h-screen">
       {/* Hero Section - Dark */}
       <div className="relative overflow-hidden bg-[#111240]">
-        {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full bg-[url('/noise.png')] opacity-20"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#181c52] via-[#181c52] to-[#3785CC] animate-gradient"></div>
@@ -109,7 +118,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-white/10 text-white/80 backdrop-blur-sm mb-6 inline-block"
             >
-              {t("about.headerBadge")}
+              {aboutData.valuesBadge}
             </motion.span>
             <h1 className="text-6xl font-bold bg-gradient-to-r from-white via-purple-100 to-white/80 bg-clip-text text-transparent mb-6">
               {aboutData.title}
@@ -123,7 +132,6 @@ export default function AboutPage() {
 
       {/* Main Content - Light */}
       <div className="bg-white relative overflow-hidden">
-        {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full bg-[url('/noise.png')] opacity-5"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3785CC]/5 via-[#5B8AF0]/5 to-[#8590EA]/5 animate-gradient"></div>
@@ -144,7 +152,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden">
                   <Image
                     src={aboutData.img}
-                    alt={t("about.imgAlt")}
+                    alt={aboutData.imgAlt}
                     width={800}
                     height={600}
                     className="w-full aspect-[4/3] object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -175,7 +183,7 @@ export default function AboutPage() {
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent">
-                  {t("about.ourStoryTitle")}
+                  {aboutData.ourStoryTitle}
                 </h2>
                 <div className="space-y-4 text-[#111240]/70 text-lg leading-relaxed">
                   {aboutData.description.map((paragraph, idx) => (
@@ -188,13 +196,13 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all duration-300">
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent">
-                    {t("about.missionTitle")}
+                    {aboutData.missionTitle}
                   </h3>
                   <p className="text-[#111240]/70">{aboutData.mission}</p>
                 </div>
                 <div className="p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all duration-300">
                   <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#4A9BE4] to-[#8590EA] bg-clip-text text-transparent">
-                    {t("about.visionTitle")}
+                    {aboutData.visionTitle}
                   </h3>
                   <p className="text-[#111240]/70">{aboutData.vision}</p>
                 </div>
@@ -206,7 +214,6 @@ export default function AboutPage() {
 
       {/* Values Section - Dark */}
       <div className="relative overflow-hidden bg-[#111240]">
-        {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full bg-[url('/noise.png')] opacity-20"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#181c52] via-[#181c52] to-[#3785CC] animate-gradient"></div>
@@ -224,19 +231,19 @@ export default function AboutPage() {
                 variants={itemVariants}
                 className="px-4 py-1.5 rounded-full text-sm font-medium bg-white/10 text-white/80 backdrop-blur-sm mb-4 inline-block"
               >
-                {t("about.valuesBadge")}
+                {aboutData.valuesBadge}
               </motion.span>
               <motion.h2
                 variants={itemVariants}
                 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white/80 bg-clip-text text-transparent"
               >
-                {t("about.valuesTitle")}
+                {aboutData.valuesTitle}
               </motion.h2>
               <motion.p
                 variants={itemVariants}
                 className="text-xl text-white/80 max-w-2xl mx-auto"
               >
-                {t("about.valuesDescription")}
+                {aboutData.valuesDescription}
               </motion.p>
             </div>
 
@@ -281,7 +288,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent"
             >
-              {t("about.ctaTitle")}
+              {aboutData.ctaTitle}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -290,7 +297,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg text-gray-600 mb-8"
             >
-              {t("about.ctaDescription")}
+              {aboutData.ctaDescription}
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 20 }}
@@ -299,7 +306,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="px-8 py-3 bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] text-white font-medium rounded-lg hover:shadow-lg transition-shadow duration-300 flex items-center mx-auto"
             >
-              <a href="/contact">{t("about.ctaButton")}</a>
+              <a href="/contact">{aboutData.ctaButton}</a>
               <LucideIcons.ArrowRight className="ml-2 h-4 w-4" />
             </motion.button>
           </div>

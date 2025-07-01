@@ -1,68 +1,1394 @@
 {
   "about": {
-    "aboutUs": "About Us",
-    "title": "Atlants",
-    "subtitle": "Integrated partnership between marketing and programming for your business success",
-    "description": [
-      "Atlants was founded in 2018 as a strategic partnership between digital marketing experts and software developers to provide integrated solutions for companies and institutions. We combine the power of professional marketing and innovative technical development to help our clients grow in the digital world.",
-      "We have a team of professional marketers and programmers who work together harmoniously to achieve our clients' goals. Over the past years, we have built a strong reputation for providing exceptional services and achieving tangible results. Our commitment to excellence is reflected in the trust and loyalty we have earned from a wide range of clients.",
-      "With our presence in all major cities and main offices in Damascus, Aleppo, Homs, and Latakia, we are strategically positioned to provide first-class services wherever they are needed."
-    ],
-    "img": "/background.png",
-    "mission": "To provide integrated marketing and technical solutions that enable companies to achieve their maximum potential in the digital world by combining strategic marketing and innovative technical development.",
-    "vision": "To become the preferred strategic partner for companies looking to achieve sustainable growth in the digital age, by transforming challenges into opportunities using the latest marketing and programming technologies.",
-    "values": [
-      {
-        "id": 1,
-        "icon": "Globe",
-        "title": "Global Approach",
-        "text": "We adopt global best practices in marketing and programming"
+    "main": {
+      "aboutUs": "About Us",
+      "title": "Atlants",
+      "subtitle": "Integrated partnership between marketing and programming for your business success",
+      "description": [
+        "Atlants was founded in 2018 as a strategic partnership between digital marketing experts and software developers to provide integrated solutions for companies and institutions. We combine the power of professional marketing and innovative technical development to help our clients grow in the digital world.",
+        "We have a team of professional marketers and programmers who work together harmoniously to achieve our clients' goals. Over the past years, we have built a strong reputation for providing exceptional services and achieving tangible results. Our commitment to excellence is reflected in the trust and loyalty we have earned from a wide range of clients.",
+        "With our presence in all major cities and main offices in Damascus, Aleppo, Homs, and Latakia, we are strategically positioned to provide first-class services wherever they are needed."
+      ],
+      "img": "/background.png",
+      "mission": "To provide integrated marketing and technical solutions that enable companies to achieve their maximum potential in the digital world by combining strategic marketing and innovative technical development.",
+      "vision": "To become the preferred strategic partner for companies looking to achieve sustainable growth in the digital age, by transforming challenges into opportunities using the latest marketing and programming technologies.",
+      "values": [
+        {
+          "id": 1,
+          "icon": "Globe",
+          "title": "Global Approach",
+          "text": "We adopt global best practices in marketing and programming"
+        },
+        {
+          "id": 2,
+          "icon": "Target",
+          "title": "Results-Focused",
+          "text": "We measure our success through the results we achieve for our clients"
+        },
+        {
+          "id": 3,
+          "icon": "Compass",
+          "title": "Clear Vision",
+          "text": "We drive innovation and deliver exceptional performance in every project"
+        },
+        {
+          "id": 4,
+          "icon": "Shield",
+          "title": "Strong Ethics",
+          "text": "We adhere to the highest standards of integrity and professionalism in all our dealings"
+        },
+        {
+          "id": 5,
+          "icon": "Code",
+          "title": "Technical Excellence",
+          "text": "We develop innovative programming solutions that meet changing market needs"
+        },
+        {
+          "id": 6,
+          "icon": "Megaphone",
+          "title": "Marketing Creativity",
+          "text": "We design innovative marketing strategies that deliver exceptional results"
+        }
+      ],
+      "stats": [
+        { "id": 1, "number": "7+", "label": "Years Experience" },
+        { "id": 2, "number": "150+", "label": "Completed Projects" },
+        { "id": 3, "number": "35+", "label": "Team Experts" },
+        { "id": 4, "number": "96%", "label": "Client Satisfaction" }
+      ],
+      "ourStory": "Our Story",
+      "ourMission": "Our Mission",
+      "ourVision": "Our Vision",
+      "ourValues": "Our Values",
+      "whatDrivesUs": "What Drives Us",
+      "coreValuesText": "Our core values shape everything we do and guide us in delivering excellence",
+      "readyBusiness": "Ready to Take Your Business to the Next Level?",
+      "helpAchieveGoals": "We are here to help you achieve your goals through our integrated marketing and programming solutions",
+      "contactUs": "Contact Us"
+    },
+    "partnership": {
+      "title": "Marketing Excellence Meets Technical Innovation",
+      "subtitle": "Together, Atlants Marketing and AnyCode create powerful digital experiences that drive business growth",
+      "content": [
+        "At Atlants Marketing, we believe in the power of strategic marketing combined with cutting-edge technology. Our partnership with AnyCode represents the perfect fusion of creative marketing expertise and technical innovation.",
+        "We specialize in delivering comprehensive digital solutions that help businesses thrive in today's competitive landscape. From brand development to advanced web applications, our collaborative approach ensures exceptional results."
+      ],
+      "stats": [
+        { "number": "200+", "label": "Satisfied Clients" },
+        { "number": "90%", "label": "Client Retention" },
+        { "number": "150+", "label": "Projects Completed" },
+        { "number": "2", "label": "Specialized Teams" }
+      ],
+      "features": [
+        {
+          "title": "Strategic Marketing",
+          "text": "Data-driven marketing strategies that deliver measurable results and business growth."
+        },
+        {
+          "title": "Technical Excellence",
+          "text": "Cutting-edge development solutions powered by AnyCode's expert team."
+        },
+        {
+          "title": "Integrated Solutions",
+          "text": "Seamless combination of marketing expertise and technical innovation."
+        },
+        {
+          "title": "Collaborative Approach",
+          "text": "Two specialized teams working together to achieve your business goals."
+        }
+      ],
+      "buttonLearnMore": "Learn More About Our Partnership"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "marketing": {
+      "title": "Marketing Solutions",
+      "digitalMarketing": {
+        "title": "Digital Marketing",
+        "description": "Data-driven digital marketing strategies that drive traffic, generate leads, and increase conversions for sustainable business growth."
       },
-      {
-        "id": 2,
-        "icon": "Target",
-        "title": "Results-Focused",
-        "text": "We measure our success through the results we achieve for our clients"
+      "contentStrategy": {
+        "title": "Content Strategy",
+        "description": "Strategic content planning and creation that engages your audience, builds authority, and drives business results throughout the customer journey."
       },
-      {
-        "id": 3,
-        "icon": "Compass",
-        "title": "Clear Vision",
-        "text": "We drive innovation and deliver exceptional performance in every project"
+      "brandDevelopment": {
+        "title": "Brand Development",
+        "description": "Building distinctive, memorable brand identities that connect with your audience and create lasting business value through visual identity and messaging."
       },
-      {
-        "id": 4,
-        "icon": "Shield",
-        "title": "Strong Ethics",
-        "text": "We adhere to the highest standards of integrity and professionalism in all our dealings"
-      },
-      {
-        "id": 5,
-        "icon": "Code",
-        "title": "Technical Excellence",
-        "text": "We develop innovative programming solutions that meet changing market needs"
-      },
-      {
-        "id": 6,
-        "icon": "Megaphone",
-        "title": "Marketing Creativity",
-        "text": "We design innovative marketing strategies that deliver exceptional results"
+      "socialMediaManagement": {
+        "title": "Social Media Management",
+        "description": "Strategic social media solutions to build your brand presence, engage your audience, and drive meaningful business results across all relevant platforms."
       }
-    ],
-    "stats": [
-      { "id": 1, "number": "7+", "label": "Years Experience" },
-      { "id": 2, "number": "150+", "label": "Completed Projects" },
-      { "id": 3, "number": "35+", "label": "Team Experts" },
-      { "id": 4, "number": "96%", "label": "Client Satisfaction" }
-    ],
-    "ourStory": "Our Story",
-    "ourMission": "Our Mission",
-    "ourVision": "Our Vision",
-    "ourValues": "Our Values",
-    "whatDrivesUs": "What Drives Us",
-    "coreValuesText": "Our core values shape everything we do and guide us in delivering excellence",
-    "readyBusiness": "Ready to Take Your Business to the Next Level?",
-    "helpAchieveGoals": "We are here to help you achieve your goals through our integrated marketing and programming solutions",
-    "contactUs": "Contact Us"
+    },
+    "development": {
+      "title": "Development Services",
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Creating powerful, scalable web experiences with custom websites and web applications designed to drive business growth and user engagement."
+      },
+      "mobileApps": {
+        "title": "Mobile Apps",
+        "description": "Innovative mobile application development that connects you with your users wherever they are, on iOS, Android, or cross-platform solutions."
+      },
+      "uiUxDesign": {
+        "title": "UI/UX Design",
+        "description": "User-centered design services that create intuitive, accessible, and engaging interfaces that enhance user satisfaction and drive adoption."
+      },
+      "customSolutions": {
+        "title": "Custom Solutions",
+        "description": "Tailored software development to solve your unique business challenges and drive innovation with bespoke applications and systems."
+      }
+    },
+    "extensiveJobListings": {
+      "title": "Extensive Job Listings",
+      "description": "Browse through curated job opportunities matched to your experience level and preferences."
+    },
+    "resumeSubmission": {
+      "title": "Resume Submission",
+      "description": "Upload your resume securely to connect with potential employers and opportunities."
+    },
+    "personalizedJobAlerts": {
+      "title": "Personalized Job Alerts",
+      "description": "Get notified about relevant job openings that match your career interests and skills."
+    },
+    "applicationTracking": {
+      "title": "Application Tracking",
+      "description": "Monitor your job application progress with real-time updates and status tracking."
+    },
+    "careerResources": {
+      "title": "Career Resources",
+      "description": "Access comprehensive tools and resources to enhance your job search and career development."
+    },
+    "errorFetchCategories": "Error fetching categories.",
+    "alertDeleteSuccess": "Service deleted successfully.",
+    "searchPlaceholder": "Search services...",
+    "allCategories": "All Categories",
+    "filters": {
+      "all": "All",
+      "published": "Published",
+      "drafts": "Drafts"
+    },
+    "newService": "New Service",
+    "noServicesFound": "No services found",
+    "createFirstService": "Create your first service",
+    "deleteConfirmTitle": "Delete Service?",
+    "deleteConfirmText": "This action cannot be undone. The service will be permanently removed from the system.",
+    "cancel": "Cancel",
+    "deleteButton": "Delete Service"
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "What We Offer",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "arabic": "عربي",
+    "english": "English",
+    "marketing": "Marketing Solutions",
+    "digitalMarketing": "Digital Marketing",
+    "contentStrategy": "Content Strategy",
+    "brandDevelopment": "Brand Development",
+    "socialMedia": "Social Media Management",
+    "development": "Development Services",
+    "webDevelopment": "Web Development",
+    "mobileApps": "Mobile Apps",
+    "uiux": "UI/UX Design",
+    "customSolutions": "Custom Solutions"
+  },
+  "blog": {
+    "title": "Blog | IC&I",
+    "description": "Latest insights and updates from IC&I on technology, business, and industry trends."
+  },
+  "blogPost": {
+    "loading": {
+      "title": "Loading Blog Post...",
+      "subtitle1": "Fetching the latest content for you.",
+      "subtitle2": "Please wait a moment."
+    },
+    "error": {
+      "title": "Post Not Found",
+      "message": "Sorry, we couldn't find the blog post you're looking for.",
+      "backButton": "Back to Blogs"
+    },
+    "backToBlogs": "Back to Blogs",
+    "shareButton": "Share",
+    "byAuthor": "By {{author}}",
+    "dateFormatOptions": {
+      "day": "2-digit",
+      "month": "short",
+      "year": "numeric"
+    },
+    "categoryLabel": "Category"
+  },
+  "hero": {
+    "badge": "What We Offer",
+    "title": "Strategic Marketing & Development",
+    "subtitle": "Empowering your business with innovative marketing strategies and cutting-edge development solutions",
+    "slides": [
+      {
+        "title": "Transform Your Digital Presence",
+        "subtitle": "ATLANTS MARKETING",
+        "description": "We combine innovative marketing strategies with cutting-edge development by AnyCode to deliver exceptional digital experiences that drive real business growth.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+        "accent": "from-[#3AA39C] to-[#1B365D]",
+        "buttons": {
+          "primary": { "text": "Our Services", "href": "/services" },
+          "secondary": { "text": "Get Started", "href": "/contact" }
+        }
+      },
+      {
+        "title": "Data-Driven Marketing Solutions",
+        "subtitle": "STRATEGIC GROWTH",
+        "description": "Leverage our expertise in digital marketing and analytics to make informed decisions that boost your ROI and market presence.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
+        "accent": "from-[#1B365D] to-[#3AA39C]",
+        "buttons": {
+          "primary": { "text": "View Case Studies", "href": "/case-studies" },
+          "secondary": { "text": "Free Consultation", "href": "/contact" }
+        }
+      },
+      {
+        "title": "Synergy of Marketing and Development",
+        "subtitle": "ATLANTS and AnyCode",
+        "description": "Experience the perfect blend of marketing excellence and technical innovation. Our partnership delivers integrated solutions that transform ideas into market-leading digital products.",
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
+        "accent": "from-purple-600 to-emerald-600",
+        "buttons": {
+          "primary": { "text": "Partnership Benefits", "href": "/partnership" },
+          "secondary": { "text": "Success Stories", "href": "/success-stories" }
+        }
+      }
+    ]
+  },
+
+  "blogs": {
+    "hero": {
+      "badge": "Our Blog",
+      "title": "Latest Insights",
+      "description": "Stay updated with the latest insights on consultancy, IT solutions, and business strategies. Explore topics from tech advancements to HR best practices and more."
+    },
+    "button": {
+      "readMore": "Read More"
+    },
+    "loading": {
+      "title": "Loading...",
+      "subtitle": "Fetching the latest blog posts"
+    },
+    "error": {
+      "fetchFailed": "Error fetching blogs"
+    }
+  },
+  "info": {
+    "badge": "Contact Information",
+    "title": "Let's Make It Happen",
+    "subtitle": "Have a question or want to work together? We'd love to hear from you. Get in touch with us using any of the following methods.",
+    "address": {
+      "title": "Visit Our Office",
+      "line1": "123 Digital Center, Smart Village",
+      "line2": "Cairo, Egypt"
+    },
+    "phone": {
+      "title": "Call Us",
+      "main": "Phone",
+      "support": "Support"
+    },
+    "email": {
+      "title": "Email Us"
+    },
+    "hours": {
+      "title": "Working Hours",
+      "weekdays": "Mon - Fri: 9:00 AM - 6:00 PM",
+      "saturday": "Sat: 10:00 AM - 2:00 PM"
+    },
+    "followUs": "Follow Us"
+  },
+  "form": {
+    "title": "Contact Us",
+    "description": "We'd love to hear from you! Fill out the form below.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully",
+    "errors": {
+      "nameMin": "Name must be at least 2 characters",
+      "nameRequired": "Name is required",
+      "emailInvalid": "Invalid email format",
+      "emailRequired": "Email is required",
+      "subjectMin": "Subject must be at least 5 characters",
+      "subjectRequired": "Subject is required",
+      "messageMin": "Message must be at least 10 characters",
+      "messageRequired": "Message is required"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Get in Touch",
+      "title": "Let's Create Digital Excellence Together",
+      "description": "Ready to transform your digital presence? Our team of experts is here to help you achieve your marketing goals and drive remarkable results."
+    }
+  },
+
+  "sections": {
+    "services": {
+      "badge": "What We Offer",
+      "title": "Strategic Marketing & Development",
+      "description": "Empowering your business with innovative marketing strategies and cutting-edge development solutions",
+      "badge1": "What We Offer",
+      "title1": "Our Services",
+      "description1": "Discover our comprehensive range of services designed to help your business grow and succeed in the digital landscape.",
+
+      "marketing": {
+        "title": "Marketing Solutions",
+        "description": "Strategic marketing services designed to elevate your brand presence and drive business growth.",
+        "items": {
+          "digital": {
+            "title": "Digital Marketing",
+            "description": "Data-driven digital marketing strategies that drive traffic, generate leads, and increase conversions.",
+            "gradient": "from-[#3B82F6] to-[#60A5FA]"
+          },
+          "content": {
+            "title": "Content Strategy",
+            "description": "Strategic content planning and creation that engages your audience and builds authority.",
+            "gradient": "from-[#14B8A6] to-[#2DD4BF]"
+          },
+          "branding": {
+            "title": "Brand Development",
+            "description": "Building distinctive, memorable brand identities that connect with your audience.",
+            "gradient": "from-[#9333EA] to-[#A855F7]"
+          },
+          "social-media": {
+            "title": "Social Media Management",
+            "description": "Strategic social media solutions to build your brand presence and engage your audience.",
+            "gradient": "from-[#EC4899] to-[#F472B6]"
+          }
+        }
+      },
+      "development": {
+        "title": "Development Services",
+        "description": "Cutting-edge development solutions that power digital transformation for your business.",
+        "items": {
+          "web-development": {
+            "title": "Web Development",
+            "description": "Custom websites and applications that create powerful, scalable experiences.",
+            "gradient": "from-[#3785CC] to-[#4A9BE4]"
+          },
+          "mobile-apps": {
+            "title": "Mobile Apps",
+            "description": "Native and cross-platform mobile applications that connect you with users on any device.",
+            "gradient": "from-[#6366F1] to-[#8B5CF6]"
+          },
+          "ui-ux-design": {
+            "title": "UI/UX Design",
+            "description": "User-centered design services that create intuitive, engaging digital experiences.",
+            "gradient": "from-[#F59E0B] to-[#F97316]"
+          },
+          "custom-solutions": {
+            "title": "Custom Solutions",
+            "description": "Tailored software development to solve your unique business challenges.",
+            "gradient": "from-[#10B981] to-[#059669]"
+          }
+        }
+      },
+      "specialized": {
+        "title": "Specialized Solutions",
+        "description": "Advanced tools and services to enhance your digital marketing and development efforts.",
+        "items": {
+          "analytics": {
+            "title": "Marketing Analytics",
+            "description": "Comprehensive tracking and analysis to optimize your marketing campaigns.",
+            "gradient": "from-[#4A9BE4] to-[#8590EA]"
+          },
+          "ecommerce": {
+            "title": "E-commerce Solutions",
+            "description": "Custom online store development and optimization for maximum conversions.",
+            "gradient": "from-[#FF6B6B] to-[#FF8E53]"
+          },
+          "content-creation": {
+            "title": "Content Creation",
+            "description": "Professional photography, video, and creative assets for your brand.",
+            "gradient": "from-[#FF8E53] to-[#FFBD80]"
+          }
+        }
+      },
+      "learnMore": "Learn More"
+    },
+
+    "loading": "Loading...",
+    "error": "Error",
+    "table": {
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "createdAt": "Created At"
+    },
+    "overview": {
+      "title": "Overview",
+      "heading": "Building Careers in Syria",
+      "description": "IC&I dedicates its efforts to fostering a thriving job market in Syria through our specialized platform, Jobs.Eshi. This initiative aims to connect ambitious professionals and qualified talents with suitable job opportunities, helping build careers and achieve economic growth. Our smart matching algorithms link job seekers to opportunities matching their qualifications and career goals."
+    },
+    "features": {
+      "title": "Platform Features",
+      "heading": "Integrated Tools for Career Building",
+      "description": "Jobs.Eshi is more than just a job board — it's an integrated career-building tool designed to empower Syrian professionals to achieve their career aspirations."
+    },
+
+    "header": {
+      "title": "Business Process Outsourcing"
+    },
+    "cta": {
+      "badge": "Transform Your Digital Presence",
+      "title": "Ready to Elevate Your Business to New Heights?",
+      "description": "Partner with Atlants Marketing and AnyCode to create powerful digital experiences that drive growth and success in today's competitive landscape.",
+      "marketingTitle": "Marketing Excellence",
+      "marketingDescription": "Strategic digital marketing solutions that deliver measurable results",
+      "techTitle": "Technical Innovation",
+      "techDescription": "Cutting-edge development solutions for your digital needs",
+      "primaryButton": "Start Your Journey",
+      "secondaryButton": "Explore Our Services"
+    },
+    "blogPreview": {
+      "title": "Latest Blog Posts",
+      "subtitle": "Stay updated with our latest ideas and news",
+      "readMore": "Read More"
+    },
+    "editCategory": {
+      "title": "Edit Category",
+      "back": "Back to Categories",
+      "name": "Name",
+      "titleLabel": "Title",
+      "description": "Description",
+      "overviewTitle": "Overview",
+      "overviewSectionTitle": "Overview Section Title",
+      "overviewSectionContent": "Overview Section Content",
+      "published": "Published",
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "success": "Category updated successfully",
+      "error": "Failed to save category",
+      "fetchError": "Failed to fetch category data"
+    },
+    "adminDashboard": {
+      "welcome": "Welcome back, {{name}}",
+      "subtitle": "Here's what's happening with your website today.",
+      "overview": "Overview",
+      "recentActivity": "Recent Activity",
+      "noNotifications": "You don't have any notifications yet. We'll let you know when something arrives.",
+      "dateFormatOptions": {
+        "weekday": "long",
+        "year": "numeric",
+        "month": "long",
+        "day": "numeric"
+      }
+    },
+    "category": {
+      "loading": "Loading...",
+      "error": "Error",
+      "notFound": "No category found",
+      "overview": "Overview",
+      "offerings": "What We Offer",
+      "learnMore": "Learn More"
+    },
+    "serviceHero": {
+      "whatWeOffer": "What We Offer"
+    },
+    "hrPayroll": {
+      "heroTitle": "HR Payroll & Performance Management",
+      "heroDescription": "Optimizing Payroll and Driving Employee Performance.",
+      "overviewLabel": "Overview",
+      "overviewTitle": "Streamlined Payroll Solutions",
+      "overviewContent": "Managing payroll and employee performance is a critical aspect of running a successful business, and IC&I is here to simplify the process. We currently manage payroll for over 700 personnel, ensuring timely and accurate payments, while also providing comprehensive performance management services that help our clients maximize the potential of their workforce.",
+      "sectionLabel": "What We Offer",
+      "sectionTitle": "Payroll & Performance Solutions",
+      "sectionContent": "By outsourcing your payroll & performance management to us, you can focus on strategic business initiatives, knowing that your HR functions are in expert hands.",
+      "services": [
+        {
+          "title": "Payroll Processing",
+          "description": "Streamline your payroll operations with comprehensive automated calculations, tax processing, and efficient payment distribution systems."
+        },
+        {
+          "title": "Performance Monitoring",
+          "description": "Track and analyze comprehensive performance metrics to measure team success and align organizational goals with strategic opportunities."
+        },
+        {
+          "title": "Feedback and Coaching",
+          "description": "Foster professional growth through structured feedback sessions and personalized development strategies for long-term career advancement."
+        },
+        {
+          "title": "Employee Engagement",
+          "description": "Build and maintain a positive workplace culture through targeted strategies designed to enhance team satisfaction and long-term retention."
+        },
+        {
+          "title": "Two-Way Communication",
+          "description": "Enable transparent and effective dialogue between team members and leadership through dedicated communication channels and protocols."
+        }
+      ]
+    },
+    "hrRecruitment": {
+      "heroTitle": "HR & Recruitment Management",
+      "heroDescription": "Tailored HR Solutions to Attract, Develop, and Retain Top Talent.",
+      "overviewLabel": "Overview",
+      "overviewTitle": "Empowering Your Workforce",
+      "overviewContent": "At IC&I, we understand that the success of your organization hinges on the quality of your workforce. That's why we offer comprehensive HR and recruitment management services that go beyond simply filling positions. What we offer is designed to attract, assess, and deploy the right talent, ensuring your organization is equipped with the expertise it needs to thrive.",
+      "sectionLabel": "What We Offer",
+      "sectionTitle": "HR & Recruitment Services",
+      "sectionContent": "Our HR management services are designed to provide your organization with the support it needs to build and maintain a high-performing workforce.",
+      "services": [
+        {
+          "title": "Talent Acquisition",
+          "description": "Expert recruitment services for identifying and attracting top-tier professionals across industries"
+        },
+        {
+          "title": "Candidate Assessment",
+          "description": "Comprehensive evaluation of skills, experience, and cultural fit for optimal placement."
+        },
+        {
+          "title": "Contracting & Deployment",
+          "description": "Streamlined management of contract negotiations and seamless deployment processes."
+        },
+        {
+          "title": "HR Strategy Consulting",
+          "description": "Strategic advice on HR practices, including workforce planning, succession planning, and talent development."
+        },
+        {
+          "title": "Contract & Benefits Administration",
+          "description": "Ongoing support in managing employee contracts and benefits administration."
+        }
+      ]
+    },
+    "jobsIci": {
+      "hero": {
+        "title": "Jobs.ici – Recruiting",
+        "description": "Empowering Ambitious Professionals to Find Their Perfect Job."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Building Careers in Syria",
+        "text": "IC&I is dedicated to fostering a thriving job market in Syria through our specialized platform, Jobs.ici. This initiative is designed to connect ambitious and competent professionals with the right job opportunities, helping to build careers and drive economic growth. Our platform's intelligent matching algorithms actively work to pair job seekers with opportunities that align with their qualifications and career goals."
+      },
+      "featuresSection": {
+        "label": "Platform Features",
+        "heading": "Comprehensive Career Tools",
+        "text": "Jobs.ici is more than just a job board—it's a comprehensive career-building tool designed to empower Syrian professionals to achieve their career aspirations."
+      }
+    },
+    "businessOutsourcing": {
+      "hero": {
+        "title": "Business Outsourcing",
+        "description": "IC&I HR outsourcing services is one of our core strengths. Our scalable services are crafted to deliver optimal efficiency and support your business's evolving needs."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Market Leading HR Solutions",
+        "text": "We are the Syrian market leader with the largest market share in providing full recruitment services in UN agencies, NPO's and NGO's. Our comprehensive HR outsourcing solutions are designed to streamline your operations and drive organizational success through effective talent management."
+      },
+      "whatWeOffer": {
+        "label": "What We Offer",
+        "heading": "Business Outsourcing Solutions",
+        "text": "Explore our range of specialized HR and recruitment solutions designed to optimize your workforce management and drive business growth."
+      }
+    },
+    "customSolutions": {
+      "hero": {
+        "title": "Custom Software Solutions",
+        "description": "Tailored software development to solve your unique business challenges and drive innovation."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Bespoke Software Development",
+        "text": "When off-the-shelf solutions don't meet your specific business requirements, our custom software development services provide tailored answers to your unique challenges. We specialize in building bespoke applications that align perfectly with your workflows, increase operational efficiency, and provide a competitive edge in your industry. Our experienced development team works closely with you throughout the process, from initial concept and design to development, testing, and ongoing support, ensuring that the final solution exceeds your expectations and delivers tangible business value."
+      },
+      "whatWeOffer": {
+        "label": "What We Offer",
+        "heading": "Custom Software Services",
+        "text": "Our comprehensive custom software development services are designed to address your specific business challenges with tailored solutions."
+      },
+      "benefits": {
+        "label": "Why Custom Solutions",
+        "heading": "Benefits of Custom Software",
+        "text": "Discover the advantages of investing in custom-built software tailored to your business needs.",
+        "points": {
+          "1": {
+            "title": "Perfect Fit for Your Business",
+            "description": "Custom software is designed specifically for your business processes, workflow, and requirements, eliminating the compromises that come with off-the-shelf solutions."
+          },
+          "2": {
+            "title": "Scalability & Flexibility",
+            "description": "Custom software can grow and evolve with your business, easily adapting to changing requirements and scaling as your operations expand."
+          },
+          "3": {
+            "title": "Competitive Advantage",
+            "description": "Proprietary software tailored to your unique business model can provide a significant edge over competitors using standard solutions available to everyone."
+          },
+          "4": {
+            "title": "Integration Capabilities",
+            "description": "Custom software can be designed to seamlessly integrate with your existing systems and third-party applications, creating a unified technology ecosystem."
+          }
+        }
+      },
+      "approach": {
+        "label": "Our Approach",
+        "heading": "Custom Development Process",
+        "text": "Our structured and transparent development process ensures high-quality custom solutions that meet your specific business objectives.",
+        "steps": {
+          "1": {
+            "title": "Requirements Analysis",
+            "description": "We work closely with you to understand your business processes, challenges, and objectives to define clear requirements for your custom solution."
+          },
+          "2": {
+            "title": "Solution Design",
+            "description": "Our architects and designers create a detailed blueprint for your custom solution, including system architecture, database design, and user interfaces."
+          },
+          "3": {
+            "title": "Development & Testing",
+            "description": "Our experienced development team brings your solution to life using modern technologies and best practices, with rigorous testing at every stage."
+          },
+          "4": {
+            "title": "Deployment & Support",
+            "description": "We ensure a smooth transition to your new software with comprehensive training, and provide ongoing maintenance and support to keep your solution operating optimally."
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready for a Custom Solution?",
+        "description": "Contact our team to discuss your unique business challenges and discover how our custom software solutions can help you achieve your goals.",
+        "button": "Schedule a contact"
+      },
+      "services": {
+        "enterpriseSoftware": {
+          "title": "Enterprise Software",
+          "description": "Tailored enterprise applications designed to optimize your specific business processes, workflows, and operations."
+        },
+        "databaseSolutions": {
+          "title": "Database Solutions",
+          "description": "Custom database design, migration, and optimization services to ensure your data is structured, secure, and accessible."
+        },
+        "innovationConsulting": {
+          "title": "Innovation Consulting",
+          "description": "Strategic technology consulting to identify opportunities for digital transformation and competitive advantage."
+        },
+        "systemsIntegration": {
+          "title": "Systems Integration",
+          "description": "Seamless integration of multiple systems, applications, and data sources to create unified and efficient workflows."
+        },
+        "legacyModernization": {
+          "title": "Legacy Modernization",
+          "description": "Transforming outdated systems into modern, scalable applications while preserving critical business functionality."
+        }
+      }
+    },
+    "mobileAppsPage": {
+      "hero": {
+        "title": "Mobile App Development",
+        "description": "Creating innovative mobile experiences that connect you with your users wherever they are."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Mobile Solutions for Modern Businesses",
+        "text": "Our mobile app development team specializes in creating intuitive, feature-rich applications that help businesses engage with their customers, streamline operations, and drive growth. Whether you need a consumer-facing app or an enterprise solution, we develop mobile experiences that are not only visually stunning but also technically robust and scalable. Our expertise spans across iOS, Android, and cross-platform technologies, allowing us to deliver the right solution for your specific business requirements and user expectations."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "Mobile App Development Services",
+        "description": "From concept to deployment, we provide comprehensive mobile app development services to bring your ideas to life on any device.",
+        "services": {
+          "native": {
+            "title": "Native App Development",
+            "description": "Custom iOS and Android applications developed specifically for each platform to deliver exceptional performance and user experience."
+          },
+          "crossPlatform": {
+            "title": "Cross-Platform Development",
+            "description": "Efficient solutions using React Native and Flutter to build apps that work seamlessly across multiple platforms from a single codebase."
+          },
+          "pwa": {
+            "title": "Progressive Web Apps",
+            "description": "Web applications that offer app-like experiences, including offline functionality, push notifications, and home screen installation."
+          },
+          "deployment": {
+            "title": "App Store Deployment",
+            "description": "Comprehensive support for publishing your app to the Apple App Store and Google Play Store, including optimization for discoverability."
+          },
+          "maintenance": {
+            "title": "Maintenance & Updates",
+            "description": "Ongoing support services to keep your app secure, compatible with the latest OS versions, and aligned with evolving user needs."
+          }
+        }
+      },
+      "processSection": {
+        "label": "Our Process",
+        "heading": "How We Build Your App",
+        "description": "Our structured mobile app development process ensures we deliver high-quality, user-focused applications that meet your business objectives.",
+        "steps": {
+          "1": {
+            "title": "Discovery & Strategy",
+            "description": "We begin by understanding your business goals, target audience, and app requirements to develop a comprehensive strategy."
+          },
+          "2": {
+            "title": "Design & Prototyping",
+            "description": "Our designers create intuitive user interfaces and interactive prototypes to visualize the app before development begins."
+          },
+          "3": {
+            "title": "Development & Testing",
+            "description": "Our developers build your app using the most suitable technologies, with continuous testing to ensure quality and performance."
+          },
+          "4": {
+            "title": "Deployment & Support",
+            "description": "We handle the app store submission process and provide ongoing maintenance and updates to keep your app running smoothly."
+          }
+        }
+      },
+      "technologiesSection": {
+        "label": "Our Expertise",
+        "heading": "Technologies We Use",
+        "description": "We leverage leading mobile development technologies to create high-performance applications for any platform.",
+        "technologies": [
+          "Swift",
+          "Kotlin",
+          "React Native",
+          "Flutter",
+          "Ionic",
+          "Firebase",
+          "AWS Amplify",
+          "GraphQL",
+          "REST APIs",
+          "Redux",
+          "UIKit",
+          "Material Design",
+          "ARKit",
+          "Core ML",
+          "Jetpack Compose",
+          "Realm"
+        ]
+      },
+      "ctaSection": {
+        "heading": "Ready to Create Your Mobile App?",
+        "description": "Contact our mobile development team today to discuss your app idea and discover how we can help bring it to life on iOS and Android.",
+        "buttonText": "Start Your App Project"
+      }
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Design",
+      "description": "Creating intuitive, engaging, and user-centered digital experiences that delight your audience.",
+      "overview": {
+        "label": "Overview",
+        "heading": "User-Centered Design Excellence",
+        "paragraph": "Our UI/UX design team combines artistic creativity with strategic thinking to create digital experiences that not only look stunning but also deliver exceptional usability and accessibility. We put users at the center of every design decision, ensuring that your website, application, or digital product provides seamless interactions that keep users engaged and satisfied. From initial user research and wireframing to high-fidelity prototypes and design systems, we deliver comprehensive design solutions that align with your brand identity and business objectives."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "UI/UX Design Services",
+        "paragraph": "Our comprehensive UI/UX design services focus on creating intuitive, accessible, and engaging user experiences that drive adoption and satisfaction.",
+        "services": {
+          "userResearch": {
+            "title": "User Research",
+            "description": "In-depth research to understand your users' needs, behaviors, and pain points, guiding design decisions that truly resonate with your audience."
+          },
+          "uiDesign": {
+            "title": "UI Design",
+            "description": "Visually stunning interfaces that reflect your brand identity while creating intuitive, accessible, and engaging experiences for your users."
+          },
+          "uxDesign": {
+            "title": "UX Design",
+            "description": "User experience strategies and solutions that enhance usability, accessibility, and satisfaction, creating products that users love to interact with."
+          },
+          "prototyping": {
+            "title": "Prototyping",
+            "description": "Interactive prototypes that simulate the user experience, allowing for testing and refinement before development begins."
+          },
+          "usabilityTesting": {
+            "title": "Usability Testing",
+            "description": "Comprehensive testing with real users to identify issues, gather feedback, and validate design decisions to ensure optimal user experience."
+          }
+        }
+      },
+      "process": {
+        "label": "Our Process",
+        "heading": "Design Thinking Methodology",
+        "paragraph": "We follow a proven design thinking approach to create user experiences that truly meet the needs of your audience.",
+        "steps": {
+          "1": {
+            "title": "Empathize",
+            "description": "Understanding your users through research, interviews, and observation to identify their needs and pain points."
+          },
+          "2": {
+            "title": "Define",
+            "description": "Defining the core problems and user needs that will guide our design decisions and solutions."
+          },
+          "3": {
+            "title": "Ideate",
+            "description": "Generating a wide range of creative ideas and solutions to address the identified user needs."
+          },
+          "4": {
+            "title": "Prototype",
+            "description": "Creating interactive prototypes to visualize and test our design solutions before implementation."
+          },
+          "5": {
+            "title": "Test",
+            "description": "Testing our designs with real users to gather feedback and iterate until we achieve the optimal solution."
+          }
+        }
+      },
+      "tools": {
+        "label": "Our Toolkit",
+        "heading": "Design Tools We Use",
+        "paragraph": "We utilize industry-leading tools and technologies to deliver exceptional design solutions.",
+        "list": [
+          "Figma",
+          "Adobe XD",
+          "Sketch",
+          "InVision",
+          "Protopie",
+          "Zeplin",
+          "Illustrator",
+          "Photoshop",
+          "Principle",
+          "Framer",
+          "Maze",
+          "Hotjar",
+          "Miro",
+          "UserTesting",
+          "Axure RP",
+          "Abstract"
+        ]
+      },
+      "cta": {
+        "heading": "Ready to Elevate Your User Experience?",
+        "paragraph": "Let our UI/UX design team help you create intuitive, engaging digital experiences that your users will love.",
+        "button": "Start Your Design Project"
+      }
+    },
+    "WebDevelopment": {
+      "hero": {
+        "title": "Web Development",
+        "description": "Creating powerful, scalable web experiences that drive business growth."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Custom Web Development Solutions",
+        "text": "Our web development team creates powerful, scalable, and visually appealing websites and web applications that deliver exceptional user experiences. We combine creative design with cutting-edge technology to build web solutions that not only look great but also perform flawlessly across all devices and platforms. Whether you need a simple corporate website, a complex e-commerce platform, or a custom web application, our experienced developers work closely with you to understand your business goals and deliver solutions that drive results."
+      },
+      "whatWeOffer": {
+        "label": "What We Offer",
+        "heading": "Web Development Services",
+        "text": "From front-end design to back-end functionality, we provide end-to-end web development services tailored to your business needs.",
+        "services": {
+          "frontendDevelopment": {
+            "title": "Frontend Development",
+            "description": "Modern, responsive web interfaces built with the latest technologies like React, Vue, and Angular to create engaging user experiences."
+          },
+          "backendDevelopment": {
+            "title": "Backend Development",
+            "description": "Robust server-side solutions using Node.js, Python, PHP and other technologies to power your applications with scalable architecture."
+          },
+          "cmsDevelopment": {
+            "title": "CMS Development",
+            "description": "Custom content management systems and implementations of popular platforms like WordPress, allowing easy content updates."
+          },
+          "ecommerceSolutions": {
+            "title": "E-commerce Solutions",
+            "description": "Comprehensive online stores with secure payment gateways, inventory management, and optimized checkout processes."
+          },
+          "webApplicationDevelopment": {
+            "title": "Web Application Development",
+            "description": "Feature-rich web applications with complex functionalities tailored to your specific business requirements and processes."
+          }
+        }
+      },
+      "expertise": {
+        "label": "Our Expertise",
+        "heading": "Technologies We Use",
+        "text": "We leverage the latest web technologies and frameworks to build modern, high-performance websites and applications.",
+        "technologies": [
+          "HTML5 & CSS3",
+          "JavaScript",
+          "React",
+          "Vue.js",
+          "Angular",
+          "Node.js",
+          "PHP",
+          "Python",
+          "Ruby on Rails",
+          "WordPress",
+          "MongoDB",
+          "MySQL",
+          "PostgreSQL",
+          "GraphQL",
+          "Docker",
+          "AWS"
+        ]
+      },
+      "cta": {
+        "heading": "Ready to Build Your Web Project?",
+        "description": "Contact our web development team today to discuss your project requirements and discover how our expertise can help bring your vision to life.",
+        "button": "Start Your Project"
+      }
+    },
+    "footer": {
+      "services": {
+        "title": "Our Services",
+        "links": {
+          "marketingStrategy": "Marketing Strategy",
+          "digitalMarketing": "Digital Marketing",
+          "socialMedia": "Social Media",
+          "contentCreation": "Content Creation"
+        }
+      },
+      "solutions": {
+        "title": "Solutions",
+        "links": {
+          "webDevelopment": "Web Development",
+          "mobileApps": "Mobile Apps",
+          "uiUxDesign": "UI/UX Design",
+          "customSoftware": "Custom Software"
+        }
+      },
+      "contactInfo": {
+        "title": "Contact Info",
+        "address": "Cairo, Egypt",
+        "phone": "Phone: +20 123 456 789",
+        "email": "contact@atlants.com",
+        "website": "www.atlants.com"
+      },
+      "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram"
+      },
+      "companyDescription": "Atlants Marketing is a leading digital marketing agency in Egypt, providing innovative solutions to help businesses grow and succeed in the digital landscape.",
+      "poweredBy": "Powered by",
+      "poweredByDescription": "Technical excellence in web development and digital solutions",
+      "termsOfService": "Terms of Service",
+      "text": "© 2025 Your Company. All rights reserved.",
+      "copyright": "© 2025 Atlants Marketing. All rights reserved.",
+      "contact": "Contact Us",
+      "privacyPolicy": "Privacy Policy"
+    },
+
+    "introBadge": "Our Services",
+    "title": "What We Offer",
+    "description": "Explore our full range of marketing and development services designed to elevate your business.",
+
+    "readMore": "Read more",
+
+    "marketing": {
+      "title": "Marketing Services",
+      "digitalMarketing": {
+        "title": "Digital Marketing",
+        "description": "Boost your online presence through targeted advertising, SEO, and strategic marketing campaigns."
+      },
+      "contentStrategy": {
+        "title": "Content Strategy",
+        "description": "Develop impactful content strategies that engage your audience and support your brand’s voice."
+      },
+      "brandDevelopment": {
+        "title": "Brand Development",
+        "description": "Craft a strong brand identity with custom visuals, messaging, and guidelines that reflect your values."
+      },
+      "socialMediaManagement": {
+        "title": "Social Media Management",
+        "description": "Manage and grow your social media platforms with consistent, on-brand content and community engagement."
+      }
+    },
+    "development": {
+      "title": "Development Services",
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Build fast, responsive websites that deliver seamless user experiences on every device."
+      },
+      "mobileApps": {
+        "title": "Mobile Applications",
+        "description": "Develop user-friendly mobile apps tailored to your business goals and audience needs."
+      },
+      "uiUxDesign": {
+        "title": "UI/UX Design",
+        "description": "Design intuitive and visually engaging interfaces that enhance user satisfaction and retention."
+      },
+      "customSolutions": {
+        "title": "Custom Solutions",
+        "description": "Get tailor-made software solutions designed to meet your unique business requirements."
+      }
+    },
+    "digital": {
+      "hero": {
+        "title": "Digital Marketing",
+        "description": "Data-driven digital marketing strategies that drive traffic, generate leads, and increase conversions for sustainable business growth."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Strategic Digital Marketing Solutions",
+        "paragraph": "In today's competitive digital landscape, a strategic and data-driven approach to digital marketing is essential for business success. Our comprehensive Digital Marketing services help you navigate the complex digital ecosystem to reach your target audience, build brand awareness, generate quality leads, and drive conversions. We combine industry expertise with the latest technologies and best practices to create customized digital marketing strategies that align with your business objectives and deliver measurable results. Whether you're looking to increase website traffic, improve conversion rates, or enhance your overall online presence, our team of digital marketing specialists will work closely with you to achieve your goals."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "Digital Marketing Services",
+        "description": "Our comprehensive digital marketing services are designed to help you achieve your business goals through strategic online initiatives.",
+        "services": {
+          "seo": {
+            "title": "Search Engine Optimization",
+            "description": "Comprehensive SEO strategies to improve your organic rankings, drive qualified traffic, and increase online visibility."
+          },
+          "paidAdvertising": {
+            "title": "Paid Advertising",
+            "description": "Strategic PPC campaigns across search, social, and display networks to drive targeted traffic and maximize ROI."
+          },
+          "emailMarketing": {
+            "title": "Email Marketing",
+            "description": "Personalized email campaigns that nurture leads, build relationships, and drive conversions throughout the customer journey."
+          },
+          "contentMarketing": {
+            "title": "Content Marketing",
+            "description": "Strategic content creation and distribution to attract, engage, and convert your target audience while building brand authority."
+          },
+          "analyticsReporting": {
+            "title": "Analytics & Reporting",
+            "description": "Comprehensive data analysis and reporting to track performance, measure ROI, and continuously optimize your digital marketing efforts."
+          }
+        }
+      },
+      "processSection": {
+        "label": "Our Approach",
+        "heading": "The Digital Marketing Process",
+        "paragraph": "Our strategic approach to digital marketing ensures we deliver measurable results that drive business growth.",
+        "steps": {
+          "research": {
+            "title": "Research & Analysis",
+            "description": "Understanding your business, audience, competitors, and market to develop data-driven strategies."
+          },
+          "strategy": {
+            "title": "Strategy Development",
+            "description": "Creating a comprehensive digital marketing strategy aligned with your business objectives."
+          },
+          "implementation": {
+            "title": "Implementation",
+            "description": "Executing the strategy across relevant channels with attention to detail and best practices."
+          },
+          "monitoring": {
+            "title": "Monitoring & Analysis",
+            "description": "Continuous tracking of performance metrics to measure effectiveness and identify opportunities."
+          },
+          "optimization": {
+            "title": "Optimization",
+            "description": "Refining strategies and tactics based on data insights to improve performance and ROI."
+          }
+        }
+      },
+      "resultsSection": {
+        "heading": "Driving Measurable Results",
+        "paragraph": "Our digital marketing strategies focus on delivering tangible business outcomes and sustainable growth.",
+        "metrics": {
+          "organicTraffic": {
+            "value": "+142%",
+            "label": "Organic Traffic Growth",
+            "description": "Average organic traffic increase for our clients through strategic SEO and content marketing."
+          },
+          "roi": {
+            "value": "3.8x",
+            "label": "ROI on Ad Spend",
+            "description": "Average return on investment for our clients' digital advertising campaigns."
+          },
+          "conversionRate": {
+            "value": "+58%",
+            "label": "Conversion Rate",
+            "description": "Average increase in website conversion rates through optimization and targeted campaigns."
+          }
+        }
+      },
+      "cta": {
+        "heading": "Ready to Grow Your Digital Presence?",
+        "paragraph": "Contact our digital marketing specialists to discuss how we can help you achieve your business goals through strategic online initiatives.",
+        "button": "Request a Digital Marketing Strategy"
+      }
+    },
+    "Content": {
+      "hero": {
+        "title": "Content Strategy",
+        "description": "Strategic content planning and creation that engages your audience, builds authority, and drives business results."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Strategic Content That Drives Results",
+        "paragraph": "Content is at the heart of effective digital marketing, but random content creation without a clear strategy rarely delivers results. Our Content Strategy services provide a structured approach to planning, creating, and optimizing content that resonates with your target audience and supports your business objectives. We focus on developing comprehensive strategies that align with your brand voice, address audience needs throughout the customer journey, and leverage the right formats and channels to maximize impact. From initial audience research to ongoing performance analysis, we ensure your content marketing efforts are strategic, cohesive, and measurable."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "Content Strategy Services",
+        "description": "Our comprehensive content strategy services are designed to help you create purposeful content that engages your audience and achieves your business goals.",
+        "services": {
+          "contentStrategyDevelopment": {
+            "title": "Content Strategy Development",
+            "description": "Comprehensive content strategies aligned with your business goals, target audience needs, and marketing objectives."
+          },
+          "contentCreation": {
+            "title": "Content Creation",
+            "description": "High-quality, engaging content creation across various formats including blog posts, articles, whitepapers, and more."
+          },
+          "audienceResearch": {
+            "title": "Audience Research",
+            "description": "In-depth audience analysis to understand their needs, pain points, and content preferences to guide your strategy."
+          },
+          "contentOptimization": {
+            "title": "Content Optimization",
+            "description": "Refining existing content to improve performance, SEO visibility, engagement, and conversion rates."
+          },
+          "contentPerformanceAnalysis": {
+            "title": "Content Performance Analysis",
+            "description": "Comprehensive analytics and reporting to measure content effectiveness and guide future content decisions."
+          }
+        }
+      },
+      "contentFormats": {
+        "label": "Content Formats",
+        "heading": "Strategic Content Types",
+        "paragraph": "We develop and create various content formats tailored to your audience preferences and marketing objectives.",
+        "types": {
+          "blogPosts": {
+            "title": "Blog Posts",
+            "description": "Regular articles that demonstrate expertise and improve SEO"
+          },
+          "caseStudies": {
+            "title": "Case Studies",
+            "description": "Success stories that showcase real results for clients"
+          },
+          "whitepapers": {
+            "title": "Whitepapers",
+            "description": "In-depth research reports that establish thought leadership"
+          },
+          "infographics": {
+            "title": "Infographics",
+            "description": "Visual content that simplifies complex information"
+          },
+          "videos": {
+            "title": "Videos",
+            "description": "Engaging visual content for demonstrations and storytelling"
+          },
+          "emailNewsletters": {
+            "title": "Email Newsletters",
+            "description": "Regular updates to nurture leads and maintain engagement"
+          },
+          "socialMediaContent": {
+            "title": "Social Media Content",
+            "description": "Platform-specific content for community building"
+          },
+          "websiteCopy": {
+            "title": "Website Copy",
+            "description": "Persuasive text that drives visitors to take action"
+          }
+        }
+      },
+      "processSection": {
+        "heading": "Our Content Strategy Process",
+        "paragraph": "We follow a systematic approach to developing and implementing content strategies that deliver measurable results.",
+        "steps": {
+          "research": {
+            "title": "Research & Analysis",
+            "description": "Understanding your audience, competitors, and business objectives to develop a data-informed strategy."
+          },
+          "strategyDevelopment": {
+            "title": "Strategy Development",
+            "description": "Creating a comprehensive content plan with topics, formats, channels, and editorial calendar."
+          },
+          "contentCreation": {
+            "title": "Content Creation",
+            "description": "Producing high-quality content that aligns with your brand voice and resonates with your audience."
+          },
+          "distributionAndAnalysis": {
+            "title": "Distribution & Analysis",
+            "description": "Publishing, promoting, measuring performance, and continuously optimizing your content strategy."
+          }
+        }
+      },
+      "cta": {
+        "heading": "Ready to Develop Your Content Strategy?",
+        "paragraph": "Contact our content strategy specialists to discuss how we can help you create purposeful content that engages your audience and drives results.",
+        "button": "Schedule a Content Strategy contact"
+      }
+    },
+
+    "SocialMedia": {
+      "hero": {
+        "title": "Social Media Management",
+        "description": "Strategic social media solutions to build your brand presence, engage your audience, and drive meaningful business results."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Elevate Your Social Media Presence",
+        "paragraph": "In today's digital landscape, effective social media management is essential for building brand awareness, engaging with your audience, and driving business growth. Our comprehensive Social Media Management services help you navigate the ever-evolving social landscape with strategic planning, creative content, consistent engagement, and data-driven optimization. Whether you're looking to establish your brand on social platforms, grow your following, or improve your social media ROI, our expert team will develop and execute a tailored strategy that aligns with your business objectives and resonates with your target audience."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "Social Media Services",
+        "description": "Our comprehensive social media management services are designed to help you build a strong, engaging presence across all relevant platforms.",
+        "services": {
+          "contentCreation": {
+            "title": "Content Creation & Publishing",
+            "description": "Strategic planning, creation, and publishing of engaging social media content tailored to each platform and your target audience."
+          },
+          "analytics": {
+            "title": "Performance Analytics",
+            "description": "Comprehensive tracking and analysis of your social media metrics to measure campaign effectiveness and optimize strategy."
+          },
+          "communityManagement": {
+            "title": "Community Management",
+            "description": "Proactive engagement with your audience through comments, messages, and social listening to build genuine connections."
+          },
+          "paidCampaigns": {
+            "title": "Paid Social Campaigns",
+            "description": "Strategic development and management of targeted social media advertising campaigns to reach specific audience segments."
+          },
+          "strategyDevelopment": {
+            "title": "Social Strategy Development",
+            "description": "Comprehensive social media strategy aligned with your business goals, brand identity, and target audience preferences."
+          }
+        }
+      },
+      "platforms": {
+        "label": "Platforms",
+        "heading": "Social Platforms We Manage",
+        "paragraph": "We provide expert management across all major social media platforms, tailoring our approach to each platform's unique features and audience.",
+        "list": [
+          "Instagram",
+          "Facebook",
+          "Twitter/X",
+          "LinkedIn",
+          "TikTok",
+          "Pinterest"
+        ]
+      },
+      "metrics": {
+        "heading": "Our Social Media Success Metrics",
+        "paragraph": "We measure success through meaningful metrics that align with your business objectives and demonstrate real value.",
+        "stats": {
+          "engagement": "+48% - Average engagement rate increase for our clients within the first 3 months",
+          "followers": "+65% - Average growth in social media followers across platforms",
+          "traffic": "+32% - Average increase in website traffic from social media channels",
+          "conversion": "+43% - Average improvement in social media conversion rates"
+        }
+      },
+      "processSection": {
+        "label": "Our Approach",
+        "heading": "Social Media Management Process",
+        "paragraph": "Our strategic, data-driven approach ensures your social media presence consistently delivers value and meets your business objectives.",
+        "steps": {
+          "audit": {
+            "title": "Audit & Strategy",
+            "description": "Analyzing your current social presence and developing a tailored strategy aligned with your goals."
+          },
+          "planning": {
+            "title": "Content Planning",
+            "description": "Creating a detailed content calendar with platform-specific strategies and messaging."
+          },
+          "creation": {
+            "title": "Content Creation",
+            "description": "Producing engaging multimedia content tailored to each platform's requirements and audience."
+          },
+          "management": {
+            "title": "Community Management",
+            "description": "Active engagement with your audience through comments, messages, and proactive outreach."
+          },
+          "optimization": {
+            "title": "Analysis & Optimization",
+            "description": "Continuous monitoring, reporting, and strategy refinement based on performance data."
+          }
+        }
+      },
+      "cta": {
+        "heading": "Ready to Transform Your Social Media Presence?",
+        "paragraph": "Contact our social media experts to discuss how we can help you build an engaging presence and achieve your business goals.",
+        "button": "Schedule a Social Media contact"
+      }
+    },
+
+    "Brand": {
+      "hero": {
+        "title": "Brand Development",
+        "description": "Building distinctive, memorable brand identities that connect with your audience and create lasting business value."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Building Powerful Brand Identities",
+        "paragraph": "Your brand is more than just a logo—it's the complete experience customers have with your company, from visual elements to messaging and customer interactions. Our Brand Development services help you create a cohesive, compelling brand identity that resonates with your target audience and differentiates you from competitors. Whether you're launching a new brand, refreshing an existing one, or undergoing a complete rebrand, our strategic approach focuses on creating authentic brand experiences that build recognition, loyalty, and business value."
+      },
+      "servicesSection": {
+        "label": "What We Offer",
+        "heading": "Brand Development Services",
+        "description": "Our comprehensive brand development services are designed to help you create, evolve, and strengthen your brand identity in the marketplace.",
+        "services": {
+          "visualIdentityDesign": {
+            "title": "Visual Identity Design",
+            "description": "Professional logo design, color palette selection, and visual elements that create a cohesive and memorable brand identity.",
+            "gradient": "from-[#9333EA] to-[#A855F7]"
+          },
+          "brandMessaging": {
+            "title": "Brand Messaging",
+            "description": "Development of clear, compelling brand messaging including taglines, value propositions, and brand voice guidelines.",
+            "gradient": "from-[#A855F7] to-[#C084FC]"
+          },
+          "brandStrategy": {
+            "title": "Brand Strategy",
+            "description": "Comprehensive brand strategy that defines your positioning, differentiators, and roadmap for building brand equity.",
+            "gradient": "from-[#C084FC] to-[#D8B4FE]"
+          },
+          "brandGuidelines": {
+            "title": "Brand Guidelines",
+            "description": "Detailed brand guidelines that ensure consistency across all channels and touchpoints to strengthen brand recognition.",
+            "gradient": "from-[#9333EA] to-[#A855F7]"
+          },
+          "rebranding": {
+            "title": "Rebranding",
+            "description": "Strategic rebranding services to refresh or completely transform your brand to better align with your evolving business goals.",
+            "gradient": "from-[#A855F7] to-[#C084FC]"
+          }
+        }
+      },
+      "processSection": {
+        "label": "Our Approach",
+        "heading": "Brand Development Process",
+        "paragraph": "Our strategic, research-driven process ensures we develop authentic brands that connect with audiences and drive business results.",
+        "steps": {
+          "discoveryResearch": {
+            "title": "Discovery & Research",
+            "description": "We begin by understanding your business goals, target audience, market position, and competitive landscape through in-depth research."
+          },
+          "strategyConcept": {
+            "title": "Strategy & Concept",
+            "description": "Developing your brand strategy including positioning, value proposition, personality, and conceptual creative directions."
+          },
+          "designImplementation": {
+            "title": "Design & Implementation",
+            "description": "Creating and refining all brand elements, developing comprehensive guidelines, and supporting implementation across channels."
+          }
+        }
+      },
+      "caseStudies": {
+        "heading": "Brand Success Stories",
+        "description": "See how our brand development services have helped businesses transform their market presence and achieve growth.",
+        "examples": [
+          {
+            "title": "Retail Brand Transformation",
+            "industry": "E-commerce | Retail",
+            "summary": "Complete rebranding for a retail chain that increased brand recognition by 45% and customer engagement by 60% within six months.",
+            "linkText": "View Case Study"
+          },
+          {
+            "title": "Tech Startup Brand Launch",
+            "industry": "Technology | SaaS",
+            "summary": "Brand development for a tech startup that helped secure $3M in funding and established them as an industry innovator from day one.",
+            "linkText": "View Case Study"
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to Build a Stronger Brand?",
+        "paragraph": "Let's discuss how our brand development services can help you create a distinctive identity that resonates with your audience and drives business growth.",
+        "button": "Schedule a Brand contact"
+      }
+    }
   }
 }

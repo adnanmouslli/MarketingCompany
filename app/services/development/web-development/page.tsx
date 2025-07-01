@@ -4,71 +4,80 @@ import { motion } from "framer-motion";
 import { Globe, Code, Layout, Database, Figma, ArrowRight } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 export default function WebDevelopmentPage() {
+  const { t } = useTranslation();
+
+  // ترجمة الخدمات من ملف الترجمة
   const services = [
     {
       icon: Code,
-      title: "Frontend Development",
-      description:
-        "Modern, responsive web interfaces built with the latest technologies like React, Vue, and Angular to create engaging user experiences.",
+      title: t(
+        "sections.WebDevelopment.whatWeOffer.services.frontendDevelopment.title"
+      ),
+      description: t(
+        "sections.WebDevelopment.whatWeOffer.services.frontendDevelopment.description"
+      ),
       gradient: "from-[#3785CC] to-[#4A9BE4]",
     },
     {
       icon: Database,
-      title: "Backend Development",
-      description:
-        "Robust server-side solutions using Node.js, Python, PHP and other technologies to power your applications with scalable architecture.",
+      title: t(
+        "sections.WebDevelopment.whatWeOffer.services.backendDevelopment.title"
+      ),
+      description: t(
+        "sections.WebDevelopment.whatWeOffer.services.backendDevelopment.description"
+      ),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
     {
       icon: Layout,
-      title: "CMS Development",
-      description:
-        "Custom content management systems and implementations of popular platforms like WordPress, allowing easy content updates.",
+      title: t(
+        "sections.WebDevelopment.whatWeOffer.services.cmsDevelopment.title"
+      ),
+      description: t(
+        "sections.WebDevelopment.whatWeOffer.services.cmsDevelopment.description"
+      ),
       gradient: "from-[#8590EA] to-[#B5C6F4]",
     },
     {
       icon: Globe,
-      title: "E-commerce Solutions",
-      description:
-        "Comprehensive online stores with secure payment gateways, inventory management, and optimized checkout processes.",
+      title: t(
+        "sections.WebDevelopment.whatWeOffer.services.ecommerceSolutions.title"
+      ),
+      description: t(
+        "sections.WebDevelopment.whatWeOffer.services.ecommerceSolutions.description"
+      ),
       gradient: "from-[#3785CC] to-[#4A9BE4]",
     },
     {
       icon: Figma,
-      title: "Web Application Development",
-      description:
-        "Feature-rich web applications with complex functionalities tailored to your specific business requirements and processes.",
+      title: t(
+        "sections.WebDevelopment.whatWeOffer.services.webApplicationDevelopment.title"
+      ),
+      description: t(
+        "sections.WebDevelopment.whatWeOffer.services.webApplicationDevelopment.description"
+      ),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="Web Development"
-        description="Creating powerful, scalable web experiences that drive business growth."
+        title={t("sections.WebDevelopment.hero.title")}
+        description={t("sections.WebDevelopment.hero.description")}
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
@@ -84,17 +93,18 @@ export default function WebDevelopmentPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("sections.WebDevelopment.overview.label")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent mb-8">
-            Custom Web Development Solutions
+            {t("sections.WebDevelopment.overview.heading")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {`Our web development team creates powerful, scalable, and visually appealing websites and web applications that deliver exceptional user experiences. We combine creative design with cutting-edge technology to build web solutions that not only look great but also perform flawlessly across all devices and platforms. Whether you need a simple corporate website, a complex e-commerce platform, or a custom web application, our experienced developers work closely with you to understand your business goals and deliver solutions that drive results.`}
+            {t("sections.WebDevelopment.overview.text")}
           </p>
         </motion.div>
+
         <div className="w-full h-[2px] bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] my-12 opacity-50" />
 
         <motion.div
@@ -109,19 +119,19 @@ export default function WebDevelopmentPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("sections.WebDevelopment.whatWeOffer.label")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#4A9BE4] to-[#8590EA] bg-clip-text text-transparent"
             >
-              Web Development Services
+              {t("sections.WebDevelopment.whatWeOffer.heading")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              {`From front-end design to back-end functionality, we provide end-to-end web development services tailored to your business needs.`}
+              {t("sections.WebDevelopment.whatWeOffer.text")}
             </motion.p>
           </div>
 
@@ -168,7 +178,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              Our Expertise
+              {t("sections.WebDevelopment.expertise.label")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -177,7 +187,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent"
             >
-              Technologies We Use
+              {t("sections.WebDevelopment.expertise.heading")}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -186,29 +196,16 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
             >
-              We leverage the latest web technologies and frameworks to build modern, high-performance websites and applications.
+              {t("sections.WebDevelopment.expertise.text")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              "HTML5 & CSS3",
-              "JavaScript",
-              "React",
-              "Vue.js",
-              "Angular",
-              "Node.js",
-              "PHP",
-              "Python",
-              "Ruby on Rails",
-              "WordPress",
-              "MongoDB",
-              "MySQL",
-              "PostgreSQL",
-              "GraphQL",
-              "Docker",
-              "AWS",
-            ].map((tech, index) => (
+            {(
+              t("sections.WebDevelopment.expertise.technologies", {
+                returnObjects: true,
+              }) as string[]
+            ).map((tech: string, index: number) => (
               <motion.div
                 key={tech}
                 initial={{ opacity: 0, y: 20 }}
@@ -223,7 +220,7 @@ export default function WebDevelopmentPage() {
           </div>
         </motion.div>
 
-        {/* Case Studies/Portfolio CTA */}
+        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -231,16 +228,18 @@ export default function WebDevelopmentPage() {
           viewport={{ once: true }}
           className="mt-32 bg-gradient-to-r from-[#111240] to-[#1a1f4b] rounded-2xl p-10 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your Web Project?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            {t("sections.WebDevelopment.cta.heading")}
+          </h2>
           <p className="text-white/70 max-w-2xl mx-auto mb-8">
-            Contact our web development team today to discuss your project requirements and discover how our expertise can help bring your vision to life.
+            {t("sections.WebDevelopment.cta.description")}
           </p>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             prefetch={true}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] rounded-lg text-white font-medium hover:from-[#4A9BE4] hover:to-[#8590EA] transition-all duration-300"
           >
-            Start Your Project
+            {t("sections.WebDevelopment.cta.button")}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </motion.div>

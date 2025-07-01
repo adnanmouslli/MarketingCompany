@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import ServiceHero from "@/components/services/ServiceHero";
 import { useParams } from "next/navigation";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 // Map string icon names to actual components
 const iconMap: Record<string, any> = {
@@ -36,12 +37,12 @@ const iconMap: Record<string, any> = {
   LineChart: LineChart,
   Target: Target,
   Lightbulb: Lightbulb,
-  // Add a default icon
   default: Users,
 };
 
 export default function CategoryPage() {
   const params = useParams();
+  const { t } = useTranslation();
   const [data, setData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -66,7 +67,7 @@ export default function CategoryPage() {
         if (!response.data?.category) {
           throw new Error("Invalid data format received from server");
         }
-        console.log("Received category data:", response.data.category);
+
         setData(response.data.category);
       } catch (err) {
         setError(
@@ -106,6 +107,7 @@ export default function CategoryPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
+        <span className="ml-4 text-gray-700">{t("category.loading")}</span>
       </div>
     );
   }
@@ -113,7 +115,9 @@ export default function CategoryPage() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-500 text-xl">Error: {error}</div>
+        <div className="text-red-500 text-xl">
+          {t("category.error")}: {error}
+        </div>
       </div>
     );
   }
@@ -121,7 +125,7 @@ export default function CategoryPage() {
   if (!data) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500 text-xl">No category found</div>
+        <div className="text-gray-500 text-xl">{t("category.notFound")}</div>
       </div>
     );
   }
@@ -143,7 +147,7 @@ export default function CategoryPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("category.overview")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#3785CC] to-[#4A9BE4] bg-clip-text text-transparent mb-8">
@@ -169,7 +173,7 @@ export default function CategoryPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("category.offerings")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
@@ -190,7 +194,6 @@ export default function CategoryPage() {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto"
           >
             {data.services.map((service: any) => {
-              // Get the icon component from our map, defaulting to Users if not found
               const IconComponent = iconMap[service.icon] || iconMap.default;
               return (
                 <motion.div
@@ -222,7 +225,7 @@ export default function CategoryPage() {
                       href={service.link}
                       className="inline-flex items-center text-[#111240]/80 hover:text-[#111240] group/link"
                     >
-                      <span className="mr-2">Learn More</span>
+                      <span className="mr-2">{t("category.learnMore")}</span>
                       <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300" />
                     </Link>
                   </div>

@@ -6,48 +6,43 @@ import {
   Search,
   FileCheck,
   ClipboardList,
-  Briefcase,
   Building,
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 export default function HRRecruitmentPage() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: Users,
-      title: "Talent Acquisition",
-      description:
-        "Expert recruitment services for identifying and attracting top-tier professionals across industries",
+      title: t("hrRecruitment.services.0.title"),
+      description: t("hrRecruitment.services.0.description"),
       gradient: "from-[#00B4D8] to-[#4A9BE4]",
     },
     {
       icon: Search,
-      title: "Candidate Assessment",
-      description:
-        "Comprehensive evaluation of skills, experience, and cultural fit for optimal placement.",
+      title: t("hrRecruitment.services.1.title"),
+      description: t("hrRecruitment.services.1.description"),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
     {
       icon: FileCheck,
-      title: "Contracting & Deployment",
-      description:
-        "Streamlined management of contract negotiations and seamless deployment processes.",
+      title: t("hrRecruitment.services.2.title"),
+      description: t("hrRecruitment.services.2.description"),
       gradient: "from-[#8590EA] to-[#B5C6F4]",
     },
     {
       icon: ClipboardList,
-      title: "HR Strategy Consulting",
-      description:
-        "Strategic advice on HR practices, including workforce planning, succession planning, and talent development.",
+      title: t("hrRecruitment.services.3.title"),
+      description: t("hrRecruitment.services.3.description"),
       gradient: "from-[#00B4D8] to-[#4A9BE4]",
     },
     {
       icon: Building,
-      title: "Contract & Benefits Administration",
-      description:
-        "Ongoing support in managing employee contracts and benefits administration.",
+      title: t("hrRecruitment.services.4.title"),
+      description: t("hrRecruitment.services.4.description"),
       gradient: "from-[#4A9BE4] to-[#8590EA]",
     },
   ];
@@ -74,8 +69,8 @@ export default function HRRecruitmentPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
-        title="HR & Recruitment Management"
-        description="Tailored HR Solutions to Attract, Develop, and Retain Top Talent."
+        title={t("hrRecruitment.heroTitle")}
+        description={t("hrRecruitment.heroDescription")}
       />
 
       <div className="w-full lg:w-[1280px] mx-auto px-4 py-24">
@@ -91,20 +86,15 @@ export default function HRRecruitmentPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-6 inline-block"
           >
-            Overview
+            {t("hrRecruitment.overviewLabel")}
           </motion.span>
 
           <h2 className="text-4xl font-bold bg-gradient-to-r from-[#00B4D8] to-[#4A9BE4] bg-clip-text text-transparent mb-8">
-            Empowering Your Workforce
+            {t("hrRecruitment.overviewTitle")}
           </h2>
 
           <p className="text-lg text-[#111240]/70 leading-relaxed text-justify">
-            {`At IC&I, we understand that the success of your organization hinges
-            on the quality of your workforce. That's why we offer comprehensive
-            HR and recruitment management services that go beyond simply filling
-            positions. What we offer is designed to attract, assess, and deploy
-            the right talent, ensuring your organization is equipped with the
-            expertise it needs to thrive.`}
+            {t("hrRecruitment.overviewContent")}
           </p>
         </motion.div>
 
@@ -122,21 +112,19 @@ export default function HRRecruitmentPage() {
               variants={itemVariants}
               className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
             >
-              What We Offer
+              {t("hrRecruitment.sectionLabel")}
             </motion.span>
             <motion.h2
               variants={itemVariants}
               className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#4A9BE4] to-[#8590EA] bg-clip-text text-transparent"
             >
-              HR & Recruitment Services
+              {t("hrRecruitment.sectionTitle")}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-[#111240]/70 max-w-2xl mx-auto"
             >
-              Our HR management services are designed to provide your
-              organization with the support it needs to build and maintain a
-              high-performing workforce.
+              {t("hrRecruitment.sectionContent")}
             </motion.p>
           </div>
 
@@ -146,7 +134,7 @@ export default function HRRecruitmentPage() {
           >
             {services.map((service, index) => (
               <motion.div
-                key={service.title}
+                key={index}
                 variants={itemVariants}
                 className="group relative"
               >

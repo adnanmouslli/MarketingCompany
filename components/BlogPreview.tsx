@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
 import { apiClient } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 interface Author {
   id: number;
@@ -30,6 +31,7 @@ interface BlogPost {
 }
 
 export default function BlogPreview() {
+  const { t, i18n } = useTranslation();
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -44,7 +46,6 @@ export default function BlogPreview() {
         throw new Error("Failed to fetch blogs");
       }
       if (response.data.status === "success") {
-        // Only take the first 3 published blogs for the preview
         setBlogs(
           response.data.posts
             .filter((post: BlogPost) => post.published)
@@ -89,7 +90,6 @@ export default function BlogPreview() {
 
   return (
     <section className="py-32 bg-white relative overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-full bg-[url('/noise.png')] opacity-5"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3785CC]/5 via-[#5B8AF0]/5 to-[#8590EA]/5 animate-gradient"></div>
@@ -107,13 +107,13 @@ export default function BlogPreview() {
             variants={itemVariants}
             className="text-5xl font-bold mb-6 text-[#111240] leading-normal"
           >
-            Latest Blog Posts
+            {t("sections.blogPreview.title")}
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-xl text-[#111240]/70 max-w-2xl mx-auto leading-relaxed"
           >
-            Stay updated with our latest insights and news
+            {t("sections.blogPreview.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -143,11 +143,14 @@ export default function BlogPreview() {
                     <div className="flex items-center text-[#111240]/60 mb-4">
                       <Calendar className="w-4 h-4 mr-2" />
                       <span className="text-sm leading-normal">
-                        {new Date(blog.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}
+                        {new Date(blog.date).toLocaleDateString(
+                          i18n.language === "ar" ? "ar-EG" : "en-US",
+                          {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                          }
+                        )}
                       </span>
                     </div>
                     <h3 className="text-xl font-semibold text-[#111240] mb-4 group-hover:text-[#111240]/90 transition-colors duration-300 leading-normal line-clamp-2">
@@ -157,7 +160,9 @@ export default function BlogPreview() {
                       {blog.content}
                     </p>
                     <div className="inline-flex items-center text-[#111240]/80 hover:text-[#111240] group/link mt-auto">
-                      <span className="mr-2 leading-normal">Read More</span>
+                      <span className="mr-2 leading-normal">
+                        {t("blogPreview.readMore")}
+                      </span>
                       <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>

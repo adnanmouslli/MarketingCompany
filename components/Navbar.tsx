@@ -11,49 +11,68 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ضبط اتجاه الصفحة تلقائياً حسب اللغة
+  useEffect(() => {
+    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
+
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
+
   const menuItems = [
     {
-      title: "Our Services",
+      title: t("navbar.services"),
       submenu: [
         {
-          title: "Marketing Solutions",
+          title: t("navbar.marketing"),
           href: "/services/marketing",
           items: [
-            { name: "Digital Marketing", href: "/services/marketing/digital" },
-            { name: "Content Strategy", href: "/services/marketing/content" },
-            { name: "Brand Development", href: "/services/marketing/branding" },
             {
-              name: "Social Media Management",
+              name: t("navbar.digitalMarketing"),
+              href: "/services/marketing/digital",
+            },
+            {
+              name: t("navbar.contentStrategy"),
+              href: "/services/marketing/content",
+            },
+            {
+              name: t("navbar.brandDevelopment"),
+              href: "/services/marketing/branding",
+            },
+            {
+              name: t("navbar.socialMedia"),
               href: "/services/marketing/social-media",
             },
           ],
         },
         {
-          title: "Development Services",
+          title: t("navbar.development"),
           href: "/services/development",
           items: [
             {
-              name: "Web Development",
+              name: t("navbar.webDevelopment"),
               href: "/services/development/web-development",
             },
-            { name: "Mobile Apps", href: "/services/development/mobile-apps" },
             {
-              name: "UI/UX Design",
+              name: t("navbar.mobileApps"),
+              href: "/services/development/mobile-apps",
+            },
+            {
+              name: t("navbar.uiux"),
               href: "/services/development/ui-ux-design",
             },
             {
-              name: "Custom Solutions",
+              name: t("navbar.customSolutions"),
               href: "/services/development/custom-solutions",
             },
           ],
@@ -61,16 +80,6 @@ const Navbar = () => {
       ],
     },
   ];
-
-  const pathname = usePathname();
-
-  if (pathname.startsWith("/admin")) return null;
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem("i18nextLng", lng);
-    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
-  };
 
   return (
     <motion.nav
@@ -98,30 +107,36 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div
+            className={`hidden md:flex items-center ${
+              i18n.language === "ar"
+                ? "flex-row-reverse gap-x-8" // لما عربي: عكس الصف مع مسافة صحيحة بين العناصر
+                : "flex-row gap-x-8" // لما إنجليزي: ترتيب طبيعي مع مسافة
+            }`}
+          >
             <Link
               href="/"
-              className="text-white/90 hover:text-white transition-colors relative group"
+              className="text-white/90 hover:text-white relative group"
             >
-              <span>Home</span>
+              <span>{t("navbar.home")}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             <div className="relative group">
               <Link
                 href="/services"
-                className="flex items-center text-white/90 hover:text-white transition-colors"
+                className="flex items-center text-white/90 hover:text-white"
               >
-                What We Offer
-                <ChevronDown className="ml-1 h-4 w-4 transform group-hover:rotate-180 transition-transform duration-300 text-emerald-500" />
+                {t("navbar.services")}
+                <ChevronDown className="ml-1 h-4 w-4 text-emerald-500 group-hover:rotate-180 transition-transform duration-300" />
               </Link>
               <div className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block w-[600px] p-1">
                 <div className="bg-slate-900/95 backdrop-blur-xl border border-emerald-500/10 rounded-2xl p-6 shadow-2xl">
                   <div className="grid grid-cols-2 gap-8">
                     {menuItems[0].submenu.map((section) => (
                       <div key={section.title} className="space-y-4">
-                        <Link href={section.href} className="block">
-                          <h3 className="text-white font-semibold mb-2 hover:text-emerald-500 transition-colors">
+                        <Link href={section.href}>
+                          <h3 className="text-white font-semibold mb-2 hover:text-emerald-500">
                             {section.title}
                           </h3>
                         </Link>
@@ -130,9 +145,9 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               href={item.href}
-                              className="group flex items-center text-white/80 hover:text-emerald-500 transition-colors py-2"
+                              className="flex items-center text-white/80 hover:text-emerald-500 py-2"
                             >
-                              <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 transform group-hover:translate-x-1 transition-transform duration-300" />
+                              <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 group-hover:translate-x-1 transition-transform duration-300" />
                               {item.name}
                             </Link>
                           ))}
@@ -146,39 +161,42 @@ const Navbar = () => {
 
             <Link
               href="/about"
-              className="text-white/90 hover:text-white transition-colors relative group"
+              className="text-white/90 hover:text-white relative group"
             >
-              <span>About Us</span>
+              <span>{t("navbar.about")}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             <Link
               href="/blogs"
-              className="text-white/90 hover:text-white transition-colors relative group"
+              className="text-white/90 hover:text-white relative group"
             >
-              <span>Blog</span>
+              <span>{t("navbar.blog")}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
 
-            {/* زر تغيير اللغة */}
             <button
-              onClick={() =>
-                changeLanguage(i18n.language === "en" ? "ar" : "en")
-              }
+              onClick={() => {
+                const newLang = i18n.language === "en" ? "ar" : "en";
+                i18n.changeLanguage(newLang);
+                localStorage.setItem("i18nextLng", newLang);
+              }}
               className="text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
             >
-              {i18n.language === "en" ? "عربي" : "English"}
+              {i18n.language === "en"
+                ? t("navbar.arabic")
+                : t("navbar.english")}
             </button>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-full text-white bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500/50 transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-full text-white bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 shadow-lg"
             >
-              Contact Us
+              {t("navbar.contact")}
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white focus:outline-none"
@@ -204,16 +222,16 @@ const Navbar = () => {
               <div className="px-4 py-6 space-y-4">
                 <Link
                   href="/"
-                  className="block text-white/90 hover:text-emerald-500 transition-colors py-2"
+                  className="block text-white/90 hover:text-emerald-500 py-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  Home
+                  {t("navbar.home")}
                 </Link>
 
                 {menuItems[0].submenu.map((section) => (
                   <div key={section.title} className="space-y-2">
-                    <Link href={section.href} className="block">
-                      <h3 className="text-white font-semibold mb-2 hover:text-emerald-500 transition-colors">
+                    <Link href={section.href}>
+                      <h3 className="text-white font-semibold mb-2 hover:text-emerald-500">
                         {section.title}
                       </h3>
                     </Link>
@@ -221,7 +239,7 @@ const Navbar = () => {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block text-white/70 hover:text-emerald-500 transition-colors py-2 pl-4"
+                        className="block text-white/70 hover:text-emerald-500 py-2 pl-4"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.name}
@@ -232,37 +250,40 @@ const Navbar = () => {
 
                 <Link
                   href="/about"
-                  className="block text-white/90 hover:text-emerald-500 transition-colors py-2"
+                  className="block text-white/90 hover:text-emerald-500 py-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  About Us
+                  {t("navbar.about")}
                 </Link>
 
                 <Link
                   href="/blogs"
-                  className="block text-white/90 hover:text-emerald-500 transition-colors py-2"
+                  className="block text-white/90 hover:text-emerald-500 py-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  Blog
+                  {t("navbar.blog")}
                 </Link>
 
-                {/* زر تغيير اللغة - موبايل */}
                 <button
                   onClick={() => {
-                    changeLanguage(i18n.language === "en" ? "ar" : "en");
+                    const newLang = i18n.language === "en" ? "ar" : "en";
+                    i18n.changeLanguage(newLang);
+                    localStorage.setItem("i18nextLng", newLang);
                     setIsOpen(false);
                   }}
                   className="w-full text-white px-4 py-2 border border-emerald-500 rounded hover:bg-emerald-600 transition"
                 >
-                  {i18n.language === "en" ? "عربي" : "English"}
+                  {i18n.language === "en"
+                    ? t("navbar.arabic")
+                    : t("navbar.english")}
                 </button>
 
                 <Link
                   href="/contact"
-                  className="block px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-full text-center shadow-lg shadow-emerald-500/20"
+                  className="block px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-full text-center shadow-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  Contact Us
+                  {t("navbar.contact")}
                 </Link>
               </div>
             </motion.div>
