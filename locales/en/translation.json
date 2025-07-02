@@ -100,6 +100,51 @@
       "buttonLearnMore": "Learn More About Our Partnership"
     }
   },
+
+  
+    "jobs": {
+      "hero": {
+        "title": "Jobs.ici – Recruiting",
+        "description": "Empowering Ambitious Professionals to Find Their Perfect Job."
+      },
+      "overview": {
+        "label": "Overview",
+        "heading": "Building Careers in Syria",
+        "text": "IC&I is dedicated to fostering a thriving job market in Syria through our specialized platform, Jobs.ici. This initiative is designed to connect ambitious and competent professionals with the right job opportunities, helping to build careers and drive economic growth. Our platform's intelligent matching algorithms actively work to pair job seekers with opportunities that align with their qualifications and career goals."
+      },
+      "featuresSection": {
+        "label": "Platform Features",
+        "heading": "Comprehensive Career Tools",
+        "paragraph": "Jobs.ici is more than just a job board—it's a comprehensive career-building tool designed to empower Syrian professionals to achieve their career aspirations.",
+        "items": [
+          {
+            "title": "Extensive Job Listings",
+            "description": "Browse through curated job opportunities matched to your experience level and preferences."
+          },
+          {
+            "title": "Resume Submission",
+            "description": "Upload your resume securely to connect with potential employers and opportunities."
+          },
+          {
+            "title": "Personalized Job Alerts",
+            "description": "Get notified about relevant job openings that match your career interests and skills."
+          },
+          {
+            "title": "Application Tracking",
+            "description": "Monitor your job application progress with real-time updates and status tracking."
+          },
+          {
+            "title": "Career Resources",
+            "description": "Access comprehensive tools and resources to enhance your job search and career development."
+          }
+        ]
+      },
+      "button": {
+        "learnMore": "Learn More"
+      }
+    },
+  
+  
   "services": {
     "title": "Services",
     "marketing": {
