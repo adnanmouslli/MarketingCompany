@@ -305,7 +305,7 @@ export default function CustomSolutionsPage() {
                 className="relative flex items-start gap-x-6"
                 dir={t("isRTL") ? "rtl" : "ltr"}
               >
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#10B981] z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#10B981] z-10"></div>
 
                 {t("isRTL") ? (
                   <>
@@ -353,7 +353,7 @@ export default function CustomSolutionsPage() {
                 className="relative flex items-start gap-x-6"
                 dir={t("isRTL") ? "rtl" : "ltr"}
               >
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#059669] z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#059669] z-10"></div>
 
                 {t("isRTL") ? (
                   <>
@@ -401,7 +401,7 @@ export default function CustomSolutionsPage() {
                 className="relative flex items-start gap-x-6"
                 dir={t("isRTL") ? "rtl" : "ltr"}
               >
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#047857] z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#047857] z-10"></div>
 
                 {t("isRTL") ? (
                   <>
@@ -449,7 +449,7 @@ export default function CustomSolutionsPage() {
                 className="relative flex items-start gap-x-6"
                 dir={t("isRTL") ? "rtl" : "ltr"}
               >
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#065F46] z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#065F46] z-10"></div>
 
                 {t("isRTL") ? (
                   <>
