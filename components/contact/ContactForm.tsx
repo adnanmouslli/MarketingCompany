@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -19,7 +18,8 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const direction = i18n.dir(); // "rtl" or "ltr"
   const [isSending, setIsSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -67,10 +67,11 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container dir={direction}>
       <AnimatePresence>
         {showSuccess && (
           <SuccessNotification
+            dir={direction}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
@@ -81,6 +82,7 @@ const ContactForm: React.FC = () => {
         )}
       </AnimatePresence>
       <FormWrapper
+        dir={direction}
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(onSubmit)(e);
@@ -217,48 +219,45 @@ const ErrorMessage = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  width: 100%; /* Full width */
-  padding: 1rem 2rem; /* Padding similar to */
-  font-size: 1rem; /* Font size */
-  font-weight: 500; /* Font medium */
-  color: #ffffff; /* Text color */
-  background: linear-gradient(
-    to right,
-    #3785cc,
-    #5b8af0
-  ); /* Gradient background */
-  border: none; /* No border */
-  border-radius: 0.5rem; /* Rounded corners similar to  */
-  display: inline-flex; /* Inline flex for proper alignment */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  gap: 0.5rem; /* Spacing between items similar to  */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 0 0 transparent; /* Initial shadow */
-  transition: all 0.3s ease; /* Smooth transition */
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(to right, #3785cc, #5b8af0);
+  border: none;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 4px 10px rgba(55, 133, 204, 0.2); /* Shadow on hover */
+    box-shadow: 0 4px 10px rgba(55, 133, 204, 0.2);
   }
 
   &:disabled {
-    background: #cccccc; /* Disabled background color */
-    cursor: not-allowed; /* Disabled cursor */
-    box-shadow: none; /* Remove hover shadow when disabled */
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
   }
 `;
 
-const SuccessNotification = styled(motion.div)`
+const SuccessNotification = styled(motion.div)<{ dir?: string }>`
   position: fixed;
   top: 20px;
-  right: 20px;
+  ${({ dir }) => (dir === "rtl" ? "left: 20px;" : "right: 20px;")}
   background-color: #22c55e;
   color: white;
   padding: 16px 24px;
   border-radius: 8px;
   display: flex;
+  flex-direction: ${({ dir }) => (dir === "rtl" ? "row-reverse" : "row")};
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   z-index: 1000;

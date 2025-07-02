@@ -191,13 +191,13 @@ export default function DigitalMarketingPage() {
           viewport={{ once: true }}
           className="mt-32"
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 px-4 sm:px-0">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="px-4 py-1.5 rounded-full text-sm font-medium bg-[#111240]/5 text-[#111240] backdrop-blur-sm mb-4 inline-block"
+              className="px-5 py-2 rounded-full text-sm font-semibold bg-[#111240]/10 text-[#111240] backdrop-blur-sm mb-5 inline-block tracking-wide"
             >
               {t("sections.digital.processSection.label")}
             </motion.span>
@@ -206,7 +206,7 @@ export default function DigitalMarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent"
+              className="text-4xl font-extrabold mb-8 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent tracking-tight"
             >
               {t("sections.digital.processSection.heading")}
             </motion.h2>
@@ -215,36 +215,39 @@ export default function DigitalMarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-xl text-[#111240]/70 max-w-2xl mx-auto mb-16"
+              className="text-lg text-[#111240]/75 max-w-3xl mx-auto leading-relaxed"
             >
               {t("sections.digital.processSection.paragraph")}
             </motion.p>
           </div>
 
-          <div className="relative mb-20">
-            {/* Horizontal line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] transform -translate-y-1/2"></div>
+          <div className="relative mb-24 px-4 sm:px-0">
+            {/* الخط الأفقي */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] transform -translate-y-1/2 rounded-full opacity-30"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
               {steps.map(({ key }, index) => (
                 <motion.div
                   key={key}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+                  transition={{ duration: 0.6, delay: 0.15 * (index + 1) }}
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="absolute top-1/2 left-1/2 w-8 h-8 bg-white border-4 border-[#3B82F6] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
+                  {/* الدائرة */}
+                  <div className="absolute top-1/2 left-1/2 w-6 h-6 bg-white border-2 border-[#3B82F6] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20 shadow-md"></div>
+
+                  {/* المحتوى */}
                   <div
                     className={`${
-                      index % 2 === 0 ? "pt-12" : "pb-12"
-                    } text-center`}
+                      index % 2 === 0 ? "pt-28" : "pb-24"
+                    } text-center max-w-xs mx-auto`}
                   >
-                    <h3 className="text-lg font-semibold text-[#111240] mb-2">
+                    <h3 className="text-lg font-semibold text-[#111240] mt-8 mb-3 leading-snug tracking-tight">
                       {t(`sections.digital.processSection.steps.${key}.title`)}
                     </h3>
-                    <p className="text-sm text-[#111240]/60">
+                    <p className="text-sm text-[#111240]/70 leading-relaxed">
                       {t(
                         `sections.digital.processSection.steps.${key}.description`
                       )}

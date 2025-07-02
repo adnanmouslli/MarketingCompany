@@ -170,7 +170,7 @@ const Footer = () => {
               <p className="text-slate-400 text-sm leading-relaxed">
                 {t("sections.footer.companyDescription")}
               </p>
-              <div className="flex space-x-4">
+              <div className="flex gap-x-4">
                 {socialLinks.map((social) => (
                   <Link
                     key={social.label}
@@ -231,7 +231,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-start space-x-3">
+                <li key={index} className="flex items-start gap-x-3">
                   <div className="p-2 rounded-lg bg-slate-800 border border-slate-700">
                     <item.Icon className="w-5 h-5 text-slate-400" />
                   </div>

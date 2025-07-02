@@ -166,6 +166,7 @@ export default function CustomSolutionsPage() {
             ))}
           </motion.div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -250,6 +251,7 @@ export default function CustomSolutionsPage() {
             ))}
           </div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -299,18 +301,43 @@ export default function CustomSolutionsPage() {
               viewport={{ once: true }}
               className="relative mb-16"
             >
-              <div className="flex items-center mb-4">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#10B981]"></div>
-                <div className="w-1/2 pr-8 text-right">
-                  <h3 className="text-xl font-semibold text-[#111240]">
-                    {t("sections.customSolutions.approach.steps.1.title")}
-                  </h3>
-                </div>
-                <div className="w-1/2 pl-8">
-                  <p className="text-[#111240]/60">
-                    {t("sections.customSolutions.approach.steps.1.description")}
-                  </p>
-                </div>
+              <div
+                className="relative flex items-start gap-x-6"
+                dir={t("isRTL") ? "rtl" : "ltr"}
+              >
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#10B981] z-10"></div>
+
+                {t("isRTL") ? (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.1.description"
+                        )}
+                      </p>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.1.title")}
+                      </h3>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.1.title")}
+                      </h3>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.1.description"
+                        )}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
 
@@ -322,18 +349,43 @@ export default function CustomSolutionsPage() {
               viewport={{ once: true }}
               className="relative mb-16"
             >
-              <div className="flex items-center mb-4">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#059669]"></div>
-                <div className="w-1/2 pr-8 text-right">
-                  <p className="text-[#111240]/60">
-                    {t("sections.customSolutions.approach.steps.2.description")}
-                  </p>
-                </div>
-                <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-semibold text-[#111240]">
-                    {t("sections.customSolutions.approach.steps.2.title")}
-                  </h3>
-                </div>
+              <div
+                className="relative flex items-start gap-x-6"
+                dir={t("isRTL") ? "rtl" : "ltr"}
+              >
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#059669] z-10"></div>
+
+                {t("isRTL") ? (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.2.title")}
+                      </h3>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.2.description"
+                        )}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.2.description"
+                        )}
+                      </p>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.2.title")}
+                      </h3>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
 
@@ -345,18 +397,43 @@ export default function CustomSolutionsPage() {
               viewport={{ once: true }}
               className="relative mb-16"
             >
-              <div className="flex items-center mb-4">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#047857]"></div>
-                <div className="w-1/2 pr-8 text-right">
-                  <h3 className="text-xl font-semibold text-[#111240]">
-                    {t("sections.customSolutions.approach.steps.3.title")}
-                  </h3>
-                </div>
-                <div className="w-1/2 pl-8">
-                  <p className="text-[#111240]/60">
-                    {t("sections.customSolutions.approach.steps.3.description")}
-                  </p>
-                </div>
+              <div
+                className="relative flex items-start gap-x-6"
+                dir={t("isRTL") ? "rtl" : "ltr"}
+              >
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#047857] z-10"></div>
+
+                {t("isRTL") ? (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.3.description"
+                        )}
+                      </p>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.3.title")}
+                      </h3>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.3.title")}
+                      </h3>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.3.description"
+                        )}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
 
@@ -368,22 +445,48 @@ export default function CustomSolutionsPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="flex items-center mb-4">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#065F46]"></div>
-                <div className="w-1/2 pr-8 text-right">
-                  <p className="text-[#111240]/60">
-                    {t("sections.customSolutions.approach.steps.4.description")}
-                  </p>
-                </div>
-                <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-semibold text-[#111240]">
-                    {t("sections.customSolutions.approach.steps.4.title")}
-                  </h3>
-                </div>
+              <div
+                className="relative flex items-start gap-x-6"
+                dir={t("isRTL") ? "rtl" : "ltr"}
+              >
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#065F46] z-10"></div>
+
+                {t("isRTL") ? (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.4.title")}
+                      </h3>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.4.description"
+                        )}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 text-end pr-24">
+                      <p className="text-[#111240]/60">
+                        {t(
+                          "sections.customSolutions.approach.steps.4.description"
+                        )}
+                      </p>
+                    </div>
+                    <div className="w-1/2 text-start pl-24">
+                      <h3 className="text-xl font-semibold text-[#111240]">
+                        {t("sections.customSolutions.approach.steps.4.title")}
+                      </h3>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           </div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

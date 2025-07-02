@@ -21,10 +21,7 @@ export default function ContactInfo() {
     {
       icon: MapPin,
       title: t("info.address.title"),
-      details: [
-        t("info.address.line1"),
-        t("info.address.line2"),
-      ],
+      details: [t("info.address.line1"), t("info.address.line2")],
       color: "from-emerald-500 to-emerald-600",
     },
     {
@@ -61,19 +58,13 @@ export default function ContactInfo() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
@@ -102,9 +93,9 @@ export default function ContactInfo() {
             variants={itemVariants}
             className="group relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3785CC]/5 to-[#5B8AF0]/5 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3785CC]/5 to-[#5B8AF0]/5 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
             <div className="relative p-6 rounded-xl bg-white shadow-lg border border-[#111240]/10 hover:bg-[#111240]/5 transition-all duration-300">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start gap-x-4">
                 <div
                   className={`p-3 rounded-lg bg-gradient-to-r ${item.color}`}
                 >
@@ -117,12 +108,12 @@ export default function ContactInfo() {
                   {item.details.map((detail, detailIndex) => (
                     <div
                       key={detailIndex}
-                      className="flex items-center space-x-2 text-[#111240]/70"
+                      className="flex items-center gap-x-2 text-[#111240]/70"
                     >
                       {typeof detail === "string" ? (
                         <span>{detail}</span>
                       ) : (
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center gap-x-2">
                           <span className="font-semibold text-[#111240]">
                             {detail.label}
                           </span>
@@ -142,7 +133,7 @@ export default function ContactInfo() {
         <h3 className="text-lg font-semibold text-[#111240]">
           {t("info.followUs")}
         </h3>
-        <div className="flex space-x-4">
+        <div className="flex gap-x-4">
           {socialLinks.map((social, index) => (
             <Link
               key={index}
